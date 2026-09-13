@@ -43,8 +43,21 @@ MIT を選べるならそちらのほうが表示の手間は少ない。
 
 <https://github.com/solidjs/solid>
 
+MIT License で公開されている。
+
 ```
-（LICENSE の内容をここに貼る）
+MIT License
+
+Copyright (c) 2016-2025 Ryan Carniato
+```
+
+引用したリアクティブコア（`signal.ts`）のファイル冒頭には、
+S.js 由来であることを示す以下の著作権表示が置かれている。
+
+```
+The MIT License (MIT)
+
+Copyright (c) 2017 Adam Haile
 ```
 
 ---
