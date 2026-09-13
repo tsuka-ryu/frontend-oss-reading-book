@@ -1,23 +1,9 @@
-# oss-reading
+# frontend-oss-reading-book
 
 フロントエンドの基盤になっているOSSを、ソースとgit履歴から読み解いた本。
 mdBookでビルドし、GitHub Pagesで公開する。
 
-読む場所: https://USER.github.io/oss-reading
-
-## セットアップ
-
-```bash
-./setup.sh <github-username> [repo-name]
-```
-
-やること。
-
-1. 文章規範（`spec/japanese-tech-writing/SKILL.md`）を取得する
-2. `tsuka-ryu/frontend-oss-reading-book` を実際のリポジトリ名に置換する
-3. `gh repo create` して push する
-
-そのあと、Settings の Pages で Source を「GitHub Actions」に設定する。ここだけ手動。
+読む場所: https://tsuka-ryu.github.io/frontend-oss-reading-book
 
 ## 執筆
 
