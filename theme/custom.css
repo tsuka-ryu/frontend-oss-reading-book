@@ -1,0 +1,46 @@
+/* 既定のスタイルは英文向けで行間が詰まっている。日本語の長文向けに上書きする。 */
+
+:root {
+  --content-max-width: 42em;
+}
+
+.content main {
+  font-family: "Hiragino Sans", "Noto Sans JP", "Yu Gothic", sans-serif;
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+}
+
+.content p {
+  margin: 1.4em 0;
+}
+
+.content h2 {
+  margin-top: 2.4em;
+}
+
+.content blockquote {
+  border-left: 3px solid var(--quote-border);
+  background: none;
+}
+
+/* コードは横スクロールを避けたいので、本文より小さくする */
+.content pre code {
+  font-size: 0.85em;
+  line-height: 1.6;
+}
+
+/* 章末の確度欄 */
+.content hr + ul {
+  font-size: 0.9em;
+  opacity: 0.85;
+}
+
+@media (max-width: 700px) {
+  .content main {
+    font-size: 16px;
+    line-height: 1.85;
+  }
+  .content pre code {
+    font-size: 0.78em;
+  }
+}

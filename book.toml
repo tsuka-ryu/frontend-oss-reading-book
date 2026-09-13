@@ -1,0 +1,17 @@
+[book]
+title = "フロントエンドの基盤を読む"
+language = "ja"
+src = "src"
+
+[output.html]
+default-theme = "rust"
+additional-css = ["theme/custom.css"]
+git-repository-url = "https://github.com/tsuka-ryu/frontend-oss-reading-book"
+edit-url-template = "https://github.com/tsuka-ryu/frontend-oss-reading-book/edit/main/{path}"
+
+[output.html.search]
+enable = true
+
+[output.html.fold]
+enable = true
+level = 1
