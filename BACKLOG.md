@@ -154,3 +154,7 @@
 ダイジェスト（`spec/DIGEST_SPEC.md`）の実行中に見つけた章の候補。ここの項目には着手しない。採用するときは、人間が該当パートの「章の候補」へ移す。
 
 書式：`- <題材>（パート: <slug または 新規>、出典: <PR URL>、YYYY-MM-DD 追記）`
+
+- next/ogの画像生成（ImageResponse）とSVGシリアライズの安全性：属性値のXMLエスケープを境界に寄せる設計（パート: nextjs、出典: https://github.com/vercel/next.js/pull/99061、2026-09-23 追記）
+- Solid 2.0（nextブランチ）のトランザクション型シグナルと楽観的更新：held truth・laneパス・A29ルールなど1.x系にはない設計（パート: 新規、出典: https://github.com/solidjs/solid/pull/3590、2026-09-23 追記）
+- Ladybirdのプロセス分離とライブラリ切り出し：CompositorプロセスをLibWeb/LibWebViewから独立させたLibCompositingの設計（パート: 新規、出典: https://github.com/LadybirdBrowser/ladybird/pull/12152、2026-09-23 追記）

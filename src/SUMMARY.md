@@ -27,3 +27,9 @@
 # Rust コンパイラ
 # Servo
 -->
+
+# ダイジェスト
+
+- [ダイジェストについて](digest/README.md)
+- [Daily 2026-09](digest/daily/2026-09.md)
+  - [09-23（水）](digest/daily/2026-09-23.md)
