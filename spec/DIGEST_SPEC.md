@@ -38,7 +38,13 @@ Web仕様とフロントエンドOSSの動きを定期的にまとめ、`src/dig
 
 ### 調査と記述
 
-- GitHubの情報は、実行環境で使えるもの（`gh` CLI、GitHub MCP、GitHub API）で取得する。web検索も使ってよい
+- 情報の取り方は、取りたいものによって使い分ける
+  - マージされた変更の一覧: 対象を `/tmp/oss/<name>` にcloneし（またはfetchし）、`git log` で拾う。github.comのPR一覧ページを読んでもよい
+  - PR本文、レビュー、関連Issue、Discussions: github.comのページを読む（WebFetchなど）
+  - diffとコードの引用: 必ずcloneしたリポジトリの `git show` などから取る。ページの要約から引用しない
+  - このリポジトリへのIssue作成: GitHub MCP（または `gh`）
+- 実行環境によっては、他のリポジトリにGitHub APIや `gh` でアクセスできない。使えない手段に頼らない
+- web検索も使ってよい
 - 取得できなかったリポジトリは、推測で埋めずに「取得できず（理由）」と書く
 - 推測で書かない。各項目に元のPR・コミット・Issue・アドバイザリのURLを必ず付ける
 - 調べて分からなかったことは「不明」と書く
@@ -103,7 +109,6 @@ Web仕様とフロントエンドOSSの動きを定期的にまとめ、`src/dig
 - vitejs/vite
 - rolldown/rolldown
 - oxc-project/oxc
-- nodejs/node
 
 除外の判定:
 - 作者がbot（`dependabot`、`renovate` など、アカウント名が `[bot]` で終わるもの）
@@ -120,8 +125,8 @@ Web仕様とフロントエンドOSSの動きを定期的にまとめ、`src/dig
 ### 脆弱性
 
 対象:
-- GitHub Advisory Database（npmエコシステム）で react, react-dom, next, vite, rolldown に関する新規アドバイザリ
-- nodejs.org のセキュリティリリース告知
+- GitHub Advisory Database（npmエコシステム）で、上の「OSSのPR」の対象に対応するパッケージの新規アドバイザリ
+  - react, react-dom, next, vite, rolldown, oxcのnpmパッケージ（oxlint, oxc-parser など）
 
 ルール:
 - 新規がなければ「新規なし」の1行のみ
