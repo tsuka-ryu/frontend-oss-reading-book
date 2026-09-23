@@ -17,7 +17,7 @@ Web仕様と、フロントエンドのツールチェーン（当面はoxc）�
 - `src/digest/` 以下のファイル
 - `src/SUMMARY.md` の「# ダイジェスト」パート内の行
 - 本との連携で行う、Issueの作成と `BACKLOG.md` の「ダイジェストからの候補（未採用）」節への追記（後述）
-- それ以外（本編の章、`spec/`、`draft/`、BACKLOG.mdの他の節など）は触らない
+- それ以外（本編の章、`code/`、`spec/`、`draft/`、BACKLOG.mdの他の節など）は触らない
 
 ### git
 
