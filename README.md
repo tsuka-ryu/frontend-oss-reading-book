@@ -9,10 +9,11 @@ mdBookでビルドし、GitHub Pagesで公開する。
 
 仕様は `spec/BOOK_SPEC.md` にある。パートごとの対象リポジトリとFOCUSもそこ。
 
-読む対象はこのリポジトリの隣にクローンする。
+読む対象はこのリポジトリの外、`/tmp/oss/<name>` にクローンする。
+このリポジトリの中にはクローンしない。
 
 ```
-../solid    ../oxc    ../vite    ../react    ...
+/tmp/oss/solid    /tmp/oss/oxc    /tmp/oss/vite    /tmp/oss/react    ...
 ```
 
 Claude Code への指示は、パスを指定して出す。

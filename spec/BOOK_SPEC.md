@@ -13,15 +13,15 @@ Claude Code に渡す指示書として使う。
 
 | パート | slug | クローン先 | FOCUS | 除外 |
 | --- | --- | --- | --- | --- |
-| シグナル | signals | `../solid` | リアクティブコアの依存追跡と再計算 | JSXコンパイラ、SSR |
-| React Hook Form | rhf | `../react-hook-form` | 再描画を抑える購読の設計 | 各UIライブラリとの統合 |
-| oxc | oxc | `../oxc` | パーサとASTの表現、変換パイプライン | linterの個別ルール |
-| Vite / Rolldown | vite | `../vite`, `../rolldown` | 開発サーバの解決とHMR、Rolldownへの統合 | プラグインエコシステム |
-| React | react | `../react` | Fiber、Lane、レンダリングのスケジューリング | 各レンダラの固有処理 |
-| Next.js | nextjs | `../next.js` | RSCの境界がどこにどう引かれているか | デプロイ、ホスティング固有の機能 |
-| Node.js | node | `../node` | モジュール解決（ESMとCJSの相互運用） | 上記以外のすべて |
-| Rust コンパイラ | rustc | `../rust` | クエリシステムとインクリメンタルコンパイル | 型推論・借用検査の個別規則、LLVMコード生成 |
-| Servo | servo | `../servo` | スタイル計算（Stylo）の並列化と再スタイルの無効化 | WebRender、DOMスクリプト統合 |
+| シグナル | signals | `/tmp/oss/solid` | リアクティブコアの依存追跡と再計算 | JSXコンパイラ、SSR |
+| React Hook Form | rhf | `/tmp/oss/react-hook-form` | 再描画を抑える購読の設計 | 各UIライブラリとの統合 |
+| oxc | oxc | `/tmp/oss/oxc` | パーサとASTの表現、変換パイプライン | linterの個別ルール |
+| Vite / Rolldown | vite | `/tmp/oss/vite`, `/tmp/oss/rolldown` | 開発サーバの解決とHMR、Rolldownへの統合 | プラグインエコシステム |
+| React | react | `/tmp/oss/react` | Fiber、Lane、レンダリングのスケジューリング | 各レンダラの固有処理 |
+| Next.js | nextjs | `/tmp/oss/next.js` | RSCの境界がどこにどう引かれているか | デプロイ、ホスティング固有の機能 |
+| Node.js | node | `/tmp/oss/node` | モジュール解決（ESMとCJSの相互運用） | 上記以外のすべて |
+| Rust コンパイラ | rustc | `/tmp/oss/rust` | クエリシステムとインクリメンタルコンパイル | 型推論・借用検査の個別規則、LLVMコード生成 |
+| Servo | servo | `/tmp/oss/servo` | スタイル計算（Stylo）の並列化と再スタイルの無効化 | WebRender、DOMスクリプト統合 |
 
 この順に書く。
 後のパートは前のパートを前提にしてよい。
