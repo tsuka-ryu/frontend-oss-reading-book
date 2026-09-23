@@ -1,0 +1,200 @@
+# DIGEST_SPEC
+
+Web仕様とフロントエンドOSSの動きを定期的にまとめ、`src/digest/` に積む。
+本編（各パートの章）とは独立したパートとして扱う。
+
+## 目的と読者
+
+- 読者は、Web仕様・ブラウザ実装・React/Next.jsなどOSSの内部を理解したいエンジニア
+- 目的はOSSへの貢献ではなく「中身の理解」。何が変わったかより、なぜそう変えたか・どういう仕組みかを重視する
+- スマホで読み物として読む。見出しと短い段落で、流し読みしやすくする
+- 読者像と文体は、CLAUDE.mdの「書き方」ではなくこのファイルに従う
+
+## 共通ルール
+
+### 触ってよい範囲
+
+- `src/digest/` 以下のファイル
+- `src/SUMMARY.md` の「# ダイジェスト」パート内の行
+- 本との連携で行う、Issueの作成と `BACKLOG.md` の「ダイジェストからの候補（未採用）」節への追記（後述）
+- それ以外（本編の章、`spec/`、`draft/`、BACKLOG.mdの他の節など）は触らない
+
+### git
+
+- ダイジェストは例外として、PRを通さずmainへ直接pushしてよい（CLAUDE.mdにも明記）
+- 作業開始時に `git pull --rebase origin main`
+- 成果物をコミットし、`mdbook build` が通ることを確認する。通らなければpushしない
+- push前にもう一度 `git pull --rebase origin main` してからmainへpushする
+- コミットメッセージは `digest: daily 2026-09-24` / `digest: weekly 2026-W39` の形式
+- 1回の実行で1コミット
+
+### 日付と期間
+
+- 日付はすべて日本時間（JST）で扱う
+- 週番号はISO 8601の週（月曜始まり）を、JSTの日付で数える
+- 「前回の実行」は、mainにある最後の該当コミット（`digest: daily ...` または `digest: weekly ...`）のコミット日時とする
+  - 例：`git log -1 --format=%cI --grep='^digest: daily' origin/main`
+  - 該当コミットがなければ初回として扱う
+
+### 調査と記述
+
+- GitHubの情報は、実行環境で使えるもの（`gh` CLI、GitHub MCP、GitHub API）で取得する。web検索も使ってよい
+- 取得できなかったリポジトリは、推測で埋めずに「取得できず（理由）」と書く
+- 推測で書かない。各項目に元のPR・コミット・Issue・アドバイザリのURLを必ず付ける
+- 調べて分からなかったことは「不明」と書く
+- 日本語で書く。専門用語は原語を併記してよい
+- PR本文やIssueの文章を長く引用しない。要旨を自分の言葉でまとめる
+- コードの引用は解説に必要な最小限にし、引用元のファイルパスとコミットを示す
+- 対象OSSを深く読むときは `/tmp/oss/<name>` にクローンする。このリポジトリの中にはクローンしない
+
+### SUMMARY.md
+
+`src/SUMMARY.md` の末尾（パート追加用のコメントブロックより後ろ、ファイルの最後）に次のパートを置く。なければ作る。
+
+```
+# ダイジェスト
+
+- [ダイジェストについて](digest/README.md)
+- [Weekly 2026-W39](digest/weekly/2026-W39.md)
+- [Daily 2026-09](digest/daily/2026-09.md)
+```
+
+- Weeklyは新しい週を上に足す
+- Dailyは新しい月のファイルを作ったときだけ上に足す
+- `src/digest/README.md` がなければ、このファイルの「目的と読者」をもとに短い説明ページを作る
+
+---
+
+## Daily
+
+`src/digest/daily/YYYY-MM.md`（当月）の、タイトル直下に当日分を追記する。新しい日が上。
+ファイルがなければ `# Daily YYYY-MM` をタイトルにして作り、SUMMARY.mdに足す。
+対象期間は、前回のDailyの実行以降（初回は直近24時間）。
+
+当日分の形式:
+
+```
+## YYYY-MM-DD
+
+### Web仕様
+### OSSのPR
+### 脆弱性
+```
+
+### Web仕様
+
+対象:
+- whatwg/html, whatwg/dom, whatwg/fetch, whatwg/streams, whatwg/url のマージ済みPR
+- tc39/proposals のコミット（Stage変更を検出する）, tc39/ecma262 のマージ済みPR
+- w3c/csswg-drafts のマージ済みPRと、PRを通さずに入ったmainへのコミット
+- w3c/aria, w3c/ServiceWorker のマージ済みPR
+
+ルール:
+- editorial（誤字、リンク修正、整形）は除外
+- 各項目は「何が変わるか」を3行以内で
+- 最後に「仕様を読む会の候補」を1〜2個、理由つきで挙げる。なければ省略
+- 該当なしなら「特になし」の1行
+
+### OSSのPR
+
+対象:
+- facebook/react
+- vercel/next.js
+- vitejs/vite
+- rolldown/rolldown
+- oxc-project/oxc
+- nodejs/node
+
+除外の判定:
+- 作者がbot（`dependabot`、`renovate` など、アカウント名が `[bot]` で終わるもの）
+- 変更ファイルがすべて次のどれかに当たるもの
+  - docsのみ：`docs/`、`*.md`、`*.mdx`
+  - CI設定のみ：`.github/`、`.circleci/` など
+  - テストのみ：`test/`、`tests/`、`__tests__/`、`*.test.*`、`*.spec.*`、fixture
+
+ルール:
+- 各リポジトリ最大3件。内部の設計や挙動に関わるものを優先する
+- 各PRに「何を変えたか」「なぜこの変更か（PR本文・関連Issueから）」を書く
+- 該当なしのリポジトリは「特になし」の1行
+
+### 脆弱性
+
+対象:
+- GitHub Advisory Database（npmエコシステム）で react, react-dom, next, vite, rolldown に関する新規アドバイザリ
+- nodejs.org のセキュリティリリース告知
+
+ルール:
+- 新規がなければ「新規なし」の1行のみ
+- 新規があれば、次の順で書く
+  - 攻撃原理
+  - 影響バージョンと成立条件
+  - 修正コミットのdiff解説
+  - 同種の脆弱性パターン
+
+---
+
+## Weekly
+
+`src/digest/weekly/YYYY-Www.md`（ISO週番号）を作り、SUMMARY.mdに足す。
+対象期間は直近7日間。
+
+形式:
+
+```
+# Weekly YYYY-Www
+
+## RFC / Discussion
+## 今週の1コミット
+```
+
+### RFC / Discussion
+
+対象:
+- reactjs/rfcs
+- nodejs/TSC のIssue
+- vercel/next.js のDiscussions（RFCカテゴリ）
+- TC39の会議アジェンダと結果（その週に会議があった場合のみ）
+
+ルール:
+- 各議題に「論点」「賛否それぞれの主張」「今週の進展」「次に決まりそうなこと」を書く
+- 先週のWeeklyファイルがあれば読み、継続中の議題は差分だけ書く
+- 動きのない議題は載せない
+
+### 今週の1コミット
+
+今週分のDaily（`src/digest/daily/` の該当日）に載ったPRから、内部設計を学ぶ題材として最も価値のあるものを1つ選ぶ。
+
+構成:
+- 選んだ理由
+- 背景: なぜ必要だったか。関連Issueやgit履歴から過去の経緯を追う
+- 変更点: diffを読みながら、要所のコードを引用して解説
+- 周辺コード: 変更箇所が呼ばれる流れ、関係するモジュール
+- この変更から分かる設計思想
+
+対象リポジトリは `/tmp/oss/<name>` にクローンして読む。
+
+---
+
+## 本との連携
+
+DailyとWeeklyの実行中に、次のものを見つけたら対応する。
+
+### 既存の章に影響する上流の変更
+
+`src/` にすでにある章が解説しているコードを変更するPRを見つけたら、Issueを立てる。
+
+- ラベル: `book:<part>` と `upstream-change`（`<part>` は `spec/BOOK_SPEC.md` 第0節のslug。ラベルがなければ作る）
+- タイトル: `[upstream] <リポジトリ>#<PR番号> <PRタイトル>`
+- 本文: PRのURL、影響しそうな章のパス、何が古くなりそうか
+- 同じPRのIssueがすでにあれば立てない
+- Issueを作れない環境なら、Dailyの該当PRの項目に「本への影響: <章のパス>」と書き添えるだけにする
+
+### 章の候補
+
+Weeklyの「今週の1コミット」や、Dailyで設計上おもしろいPRがあり、本の章にできそうなら、`BACKLOG.md` 末尾の「ダイジェストからの候補（未採用）」節に追記する。
+
+- 追記するのはこの節だけ。各パートの「章の候補」やチェックボックスは触らない
+- 節がなければ、BACKLOG.mdの末尾に作る
+- 書式は1行1件で `- <題材>（パート: <slug または 新規>、出典: <PR URL>、YYYY-MM-DD 追記）`
+- この節の項目は執筆ルーティンの着手対象ではない。採用するときは人間が該当パートの「章の候補」へ移す
+- 同じ題材がBACKLOG.mdのどこかにすでにあれば追記しない
