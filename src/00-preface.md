@@ -60,6 +60,18 @@ The MIT License (MIT)
 Copyright (c) 2017 Adam Haile
 ```
 
+### React Hook Form
+
+<https://github.com/react-hook-form/react-hook-form>
+
+MIT License で公開されている。
+
+```
+MIT License
+
+Copyright (c) 2019-present Beier(Bill) Luo
+```
+
 ---
 
 ## この本のライセンス

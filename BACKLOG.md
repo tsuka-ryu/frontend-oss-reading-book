@@ -32,18 +32,18 @@
 
 ## React Hook Form（rhf）
 
-- [ ] パス1 骨格
+- [ ] パス1 骨格（全章。1章目は着手済み）
 - [ ] パス2 検証
-- [ ] パス3 なぜを足す
-- [ ] パス4 本文化
-- [ ] パス5 規範による点検
+- [ ] パス3 なぜを足す（全章。1章目は着手済み）
+- [ ] パス4 本文化（全章。1章目のみ完了）
+- [ ] パス5 規範による点検（全章。1章目は完了）
 
 章の候補：
 
-- 全体構造：useFormとcontrolオブジェクト
-- registerと非制御コンポーネント：再レンダリングを減らす仕組み
-- フォームの状態管理：formStateの購読とProxy
-- ControllerとuseFieldArray
+- [x] 全体構造：useFormとcontrolオブジェクト
+- [ ] registerと非制御コンポーネント：再レンダリングを減らす仕組み
+- [ ] フォームの状態管理：formStateの購読とProxy
+- [ ] ControllerとuseFieldArray
 
 ## oxc（oxc）
 
