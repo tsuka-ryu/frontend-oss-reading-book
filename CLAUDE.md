@@ -9,8 +9,10 @@
 - 1パートごとにブランチを切り、PRを出す。mainに直接pushしない（ダイジェストだけは例外。下記）。
 - `src/digest/` と SUMMARY.md の「# ダイジェスト」パートはダイジェスト用。執筆時は触らない。ダイジェストの作業は `spec/DIGEST_SPEC.md` に従い、PRを通さずmainへpushしてよい。
 - パス1〜3の成果物は `draft/<slug>/`、パス4以降の本文は `src/<slug>/` に置く。
+- 形式は「作る＋本物を読む」。各章でミニ実装に機能を一つ足し、本物の同じ箇所と並べ、本物がなぜ違うかを履歴で説明する。詳細は `spec/BOOK_SPEC.md` の第4節と第5節。
+- ミニ実装は `code/<slug>/NN-slug/` にTypeScriptで置き、`node --test "code/<slug>/NN-slug/*.test.ts"` が通ることを確認してから本文を書く。
 - 既存の本のディレクトリ構成、`SUMMARY.md`、文体に合わせる。新しい章は `SUMMARY.md` にも追加する。
-- 書き終えたら `mdbook build` が通ることを確認してからPRを出す。
+- 書き終えたら `mdbook build` と、変更した章のミニ実装のテストが通ることを確認してからPRを出す。
 
 ## 解説対象のOSSの読み方
 
