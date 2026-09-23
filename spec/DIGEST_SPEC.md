@@ -25,6 +25,7 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 
 - ダイジェストは例外として、PRを通さずmainへ直接pushしてよい（CLAUDE.mdにも明記）
 - 作業開始時に `git pull --rebase origin main`
+- 号のMarkdownを書いたら `node scripts/generate-digest-feed.mjs` を実行し、`src/digest/feed.xml`（RSSフィード）を更新する
 - 成果物をコミットし、`mdbook build` が通ることを確認する。通らなければpushしない
 - push前にもう一度 `git pull --rebase origin main` してからmainへpushする
 - コミットメッセージは `digest: daily 2026-09-24` の形式

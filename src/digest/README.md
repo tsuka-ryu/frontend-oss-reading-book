@@ -15,3 +15,7 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 最初は対象を広く取っている。Web仕様（WHATWG、TC39、CSSWG、ARIA、ServiceWorker、WCAG3）、ブラウザ実装の意向表明、React・Next.js・Vite・Rolldown・oxc・Node.js・Bun・TypeScript・Biome・Solid・React Hook Form・Ladybirdの変更とリリース、まだ決まっていない議論、npmエコシステムの脆弱性。対象の一覧と選び方は `spec/DIGEST_SPEC.md` で管理している。
 
 読んでいて不要な対象があれば、そのファイルから外していく運用にしている。
+
+## RSSで読む
+
+新しい号が出るたびに配信される [RSSフィード（feed.xml）](feed.xml) を用意している。フィードリーダーにこのURLを登録すると、サイトを開かなくても新着号が届く。
