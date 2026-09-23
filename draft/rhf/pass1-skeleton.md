@@ -56,7 +56,20 @@ FOCUS: 再描画を抑える購読の設計
 
 ## 章立て案
 
-1. **全体構造：useFormとcontrolオブジェクト** — `createFormControl` がReact非依存のプレーン関数である事実、`useForm` はそれを`useRef`で保持するだけの薄い層だという構造
-2. **registerと非制御コンポーネント：再描画を減らす仕組み** — `register`がrefを直接DOMに刺す設計、非制御コンポーネントを選ぶ理由
-3. **フォームの状態管理：formStateの購読とProxy** — `_proxyFormState`とProxyオブジェクトによる遅延購読
+BACKLOG.mdの章の候補の順を正とする（下の段階計画もこの順に合わせた）。
+
+1. **フォームの値はどこに置かれているか（useFormとcontrol）** — `createFormControl` がReact非依存のプレーン関数である事実、`useForm` はそれを`useRef`で保持するだけの薄い層だという構造
+2. **formStateのどのキーを読んだかを覚える（_proxyFormStateとshouldRenderFormState）** — 読まれたキーだけを記録し、変化したキーがそこに含まれるときだけ再描画する仕組み
+3. **registerと非制御コンポーネント** — `register`がrefを直接DOMに刺す設計、値をJSの複製ではなくDOMそのものから読む理由
 4. **ControllerとuseFieldArray** — 制御コンポーネントを避けられない場面での再描画の閉じ込め方
+
+## ミニ実装の段階計画
+
+| 章 | 足す機能 | 並べる本物の関数／ファイル | その章の終わりに残る欠点 |
+| --- | --- | --- | --- |
+| 1 | `createFormControl`・`createSubject`・`useForm`の骨格。`_formValues`に値を置き、`isDirty`が変わったときだけ通知する | `src/logic/createFormControl.ts`、`src/utils/createSubject.ts`、`src/useForm.ts` | 読んでいないキー（`errors`のみ読むコンポーネントなど）の変化でも再描画してしまう |
+| 2 | `_proxyFormState`（読んだキーの記録）、`getProxyFormState`（読み取り時にフラグを立てるgetter）、`shouldRenderFormState`（変化したキーが読まれていたときだけ通知を通す） | `src/logic/getProxyFormState.ts`、`src/logic/shouldRenderFormState.ts` | `_formValues`はonChangeが呼ばれたときしか更新されないため、DOM側で直接書き換えられた値（ブラウザの自動入力や外部からの操作）を拾えない |
+| 3 | `register`が返す`ref`。値をDOMのノードから直接読み書きし、`_formValues`への複製をやめる（非制御コンポーネント） | `src/logic/createFormControl.ts`の`register`関数、`src/logic/getFieldValue.ts` | `Controller`のような制御コンポーネントや、`useFieldArray`がやる配列単位の登録・削除には対応しない |
+| 4 | `Controller`・`useFieldArray`の骨格。制御コンポーネントの値をcontrolに橋渡しし、配列フィールドの増減を`_subjects.array`で通知する | `src/controller.tsx`、`src/useController.ts`、`src/useFieldArray.ts` | 本の対象範囲（購読の設計）を超えるバリデーションやUI統合は扱わない |
+
+この表は概算であり、各章のパス1・パス3で実ソースに当たって更新する。
