@@ -12,6 +12,10 @@
 - [依存の付け替えはどう行われるか](signals/04-dependency-cleanup.md)
 - [エフェクトはいつ、どの順で走るか](signals/05-execution-order.md)
 
+# ゼロから作るシグナル（試作）
+
+- [読んだら覚えるシグナルを作る](build-signals/01-tracking.md)
+
 # React Hook Form
 
 - [全体構造：useFormとcontrolオブジェクト](rhf/01-useform-and-control.md)
