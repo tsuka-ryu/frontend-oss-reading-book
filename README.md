@@ -26,6 +26,16 @@ spec/BOOK_SPEC.md を読んで、signals パートのパス1（骨格）を実�
 パスは6つある。骨格、検証、なぜを足す、本文化、規範による点検、読者フィードバック。
 それぞれ別のコミットにして、diffで良くなったか膨らんだだけかを見る。
 
+## ミニ実装を動かす
+
+各章のミニ実装は `code/<part>/NN-slug/` にある。Node.js 22.18以降が必要。
+
+```bash
+node --test "code/signals/*/*.test.ts"
+# React を使うパートは先に依存を入れる
+(cd code/rhf && npm install) && node --test "code/rhf/*/*.test.ts"
+```
+
 ## ローカルで確認
 
 ```bash
@@ -34,8 +44,9 @@ mdbook serve --open
 
 ## 章を足す
 
-1. `src/<part>/NN-slug.md` を作る
-2. `src/SUMMARY.md` に一行足す
+1. `code/<part>/NN-slug/` にミニ実装とテストを書く
+2. `src/<part>/NN-slug.md` を作る
+3. `src/SUMMARY.md` に一行足す
 
 SUMMARY.md に書かれていないファイルはビルドされない。
 
