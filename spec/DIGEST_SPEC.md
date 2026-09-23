@@ -54,6 +54,17 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 - コードの引用は解説に必要な最小限にし、引用元のファイルパスとコミットを示す
 - 対象OSSを深く読むときは `/tmp/oss/<name>` にクローンする。このリポジトリの中にはクローンしない
 
+### cloneの仕方
+
+実行のたびに新しい環境で動くので、cloneは毎回軽く済ませる。
+
+- 変更の一覧を拾うだけなら、ファイルの中身を落とさないcloneにする
+  - 例：`git clone --filter=blob:none --no-checkout --shallow-since=<前回の実行の1日前> <URL> /tmp/oss/<name>`
+  - `git log` はこれで動く。`git show` で必要なファイルの中身だけが後から取得される
+- 深掘りでソースを読むときだけ、必要なディレクトリに絞ってチェックアウトする（`git sparse-checkout set <path>`）
+- ブラウザエンジン（Chromium、WebKit、Gecko）はcloneしない。実装に触れるときは、ソース検索のWebページ（source.chromium.org、searchfox.org など）で該当箇所だけ読む
+- 仕様・議論系の対象（WICG、standards-positions、Chrome Platform Statusなど）はcloneせず、Webページで読んでよい
+
 ### ファイル構成とSUMMARY.md
 
 - 1日1号、1ファイル：`src/digest/daily/YYYY-MM-DD.md`
@@ -86,6 +97,7 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 ## トップニュース
 ## 今日の深掘り
 ## 仕様の変更
+## ブラウザの実装
 ## OSSのPR
 ## 議論ウォッチ
 ## 続報
@@ -101,7 +113,7 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 
 - 各ニュースは見出しで始める（見出しのレベルは各節の指定に従う。指定がなければ `###`）
 - 見出しはニュースの見出しとして書く。主語と動きが一目で分かる短い文にする（例：「HTMLに `<X>` 要素が入る」「oxcのパーサーが〇〇に対応」）。PRタイトルをそのまま使わない
-- 本文の先頭に分野タグを付ける：`【HTML】` `【DOM】` `【Fetch】` `【Streams】` `【URL】` `【TC39】` `【CSS】` `【ARIA】` `【WCAG】` `【ServiceWorker】` `【React】` `【Next.js】` `【Vite】` `【Rolldown】` `【oxc】` `【Node.js】` `【脆弱性】`
+- 本文の先頭に分野タグを付ける：`【HTML】` `【DOM】` `【Fetch】` `【Streams】` `【URL】` `【TC39】` `【CSS】` `【ARIA】` `【WCAG】` `【ServiceWorker】` `【WICG】` `【ブラウザ】` `【Interop】` `【React】` `【Next.js】` `【Vite】` `【Rolldown】` `【oxc】` `【Node.js】` `【TypeScript】` `【Biome】` `【Solid】` `【RHF】` `【脆弱性】`
 - 各ニュースの最後に `出典:` としてURLを付ける
 
 ### トップニュース
@@ -128,7 +140,7 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 
 対象リポジトリは `/tmp/oss/<name>` にクローンして読む。
 
-### 仕様の変更 / OSSのPR
+### 仕様の変更 / ブラウザの実装 / OSSのPR
 
 拾ったニュースを、除外の判定に当たるもの以外はすべて載せる。件数の上限は設けない（トップニュースや深掘りで扱ったものは、見出しと参照リンクだけ）。
 
@@ -195,6 +207,16 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 ルール:
 - editorial（誤字、リンク修正、整形）は除外
 
+### ブラウザの実装
+
+対象:
+- Chrome Platform Status（chromestatus.com）と blink-dev の「Intent to Prototype / Experiment / Ship」
+- web-platform-tests/interop のIssueと決定事項
+
+ルール:
+- どの仕様の、どの段階の実装かを書く。Web仕様のニュースや議論と同じ機能なら、続報として過去の号とつなぐ
+- ブラウザのソースはcloneしない（「cloneの仕方」参照）
+
 ### OSSのPR
 
 対象:
@@ -204,6 +226,10 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 - rolldown/rolldown
 - oxc-project/oxc
 - nodejs/node
+- microsoft/typescript-go
+- biomejs/biome
+- solidjs/solid（本のシグナルのパートが読んでいるリポジトリ）
+- react-hook-form/react-hook-form（本のRHFのパートが読んでいるリポジトリ）
 
 対象を増やす・減らすときは、このリストを直す。
 
@@ -221,7 +247,10 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 ### 議論
 
 対象:
+- WICG（WICG/proposals と、議論が動いたWICGの提案リポジトリ）：新しいWeb APIの発案
+- mozilla/standards-positions, WebKit/standards-positions：新しい仕様へのブラウザ各社の立場と理由
 - TC39の会議のアジェンダと結果（会議やノートの公開があったときのみ）
+- tc39/proposal-signals のIssueとPR
 - tc39/proposals でStageが変わった提案、またはStage 1〜3の提案リポジトリのIssueで議論が進んだもの
 - WHATWGとCSSWGのIssueのうち、会議で決まったこと（CSSWGの決定事項のコメントなど）が書き込まれたもの
 - reactjs/rfcs のPRとIssue
