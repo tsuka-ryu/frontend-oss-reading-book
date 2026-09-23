@@ -13,6 +13,7 @@
 # React Hook Form
 
 - [フォームの値はどこに置かれているか](rhf/01-useform-and-control.md)
+- [formStateのどのキーを読んだかを覚える](rhf/02-proxy-form-state.md)
 
 <!--
 パートを追加するときは、ここに `# パート名` と章の行を足す。
