@@ -6,6 +6,8 @@
 
 - [依存はいつ記録されるか](signals/01-dependency-tracking.md)
 - [書き込みはどこまで伝わるか](signals/02-write-propagation.md)
+    - [runUpdatesは自分が外側だとどう知るのか](signals/02a-run-updates.md)
+    - [エフェクトの中の書き込みはいつ流れるのか](signals/02b-effect-flush.md)
 - [メモはいつ計算し直されるか](signals/03-memo-recomputation.md)
 - [依存の付け替えはどう行われるか](signals/04-dependency-cleanup.md)
 - [エフェクトはいつ、どの順で走るか](signals/05-execution-order.md)
