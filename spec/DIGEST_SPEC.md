@@ -93,6 +93,7 @@ Web仕様と、フロントエンドのツールチェーン（当面はoxc）�
 - tc39/proposals のコミット（Stage変更を検出する）, tc39/ecma262 のマージ済みPR
 - w3c/csswg-drafts のマージ済みPRと、PRを通さずに入ったmainへのコミット
 - w3c/aria, w3c/ServiceWorker のマージ済みPR
+- w3c/wcag3 のマージ済みPRと、PRを通さずに入ったmainへのコミット
 
 ルール:
 - editorial（誤字、リンク修正、整形）は除外
