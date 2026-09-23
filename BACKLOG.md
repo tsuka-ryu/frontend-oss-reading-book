@@ -158,3 +158,6 @@
 - next/ogの画像生成（ImageResponse）とSVGシリアライズの安全性：属性値のXMLエスケープを境界に寄せる設計（パート: nextjs、出典: https://github.com/vercel/next.js/pull/99061、2026-09-23 追記）
 - Solid 2.0（nextブランチ）のトランザクション型シグナルと楽観的更新：held truth・laneパス・A29ルールなど1.x系にはない設計（パート: 新規、出典: https://github.com/solidjs/solid/pull/3590、2026-09-23 追記）
 - Ladybirdのプロセス分離とライブラリ切り出し：CompositorプロセスをLibWeb/LibWebViewから独立させたLibCompositingの設計（パート: 新規、出典: https://github.com/LadybirdBrowser/ladybird/pull/12152、2026-09-23 追記）
+- BunのTLS証明書ホスト名照合の修正：IDNAマッピングとURL構文解析を取り違えた回帰と、差分テストによる検証手法（パート: 新規、出典: https://github.com/oven-sh/bun/pull/43040、2026-09-24 追記）
+- Ladybirdのレイアウトエンジンにおけるsubtree局所性の不変条件とデバッグアサーションによる強制（パート: 新規、出典: https://github.com/LadybirdBrowser/ladybird/commit/cb290b60311af1fdd8b7d44266e9d5aa16a2a43d、2026-09-24 追記）
+- Solid next のrecomputeが再入的なdisposeでフラグを取り落とすバグ：finally節での状態再構築が抱えるリスク（パート: 新規、出典: https://github.com/solidjs/solid/pull/3625、2026-09-24 追記）

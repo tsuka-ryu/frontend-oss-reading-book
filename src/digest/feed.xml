@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Wed, 23 Sep 2026 14:38:19 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 22:16:10 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-09-24（木）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-09-24.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-09-24.html</guid>
+      <pubDate>Wed, 23 Sep 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[目立つ新機能より、足回りを固める動きが中心の一日でした。BunがTLS証明書のホスト名照合にあったURL解析由来の抜け穴を塞ぎ、Next.jsはdistDir誤設定によるデータ消失の防止やオンデマンド生成時のエラーバウンダリ復旧など、堅牢化の修正を複数入れています。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-09-23（水）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-09-23.html</link>
