@@ -69,7 +69,7 @@ BACKLOG.mdの章の候補の順を正とする（下の段階計画もこの順�
 | --- | --- | --- | --- |
 | 1 | `createFormControl`・`createSubject`・`useForm`の骨格。`_formValues`に値を置き、`isDirty`が変わったときだけ通知する | `src/logic/createFormControl.ts`、`src/utils/createSubject.ts`、`src/useForm.ts` | 読んでいないキー（`errors`のみ読むコンポーネントなど）の変化でも再描画してしまう |
 | 2 | `_proxyFormState`（読んだキーの記録）、`getProxyFormState`（読み取り時にフラグを立てるgetter）、`shouldRenderFormState`（変化したキーが読まれていたときだけ通知を通す） | `src/logic/getProxyFormState.ts`、`src/logic/shouldRenderFormState.ts` | `_formValues`はonChangeが呼ばれたときしか更新されないため、DOM側で直接書き換えられた値（ブラウザの自動入力や外部からの操作）を拾えない |
-| 3 | `register`が返す`ref`。値をDOMのノードから直接読み書きし、`_formValues`への複製をやめる（非制御コンポーネント） | `src/logic/createFormControl.ts`の`register`関数、`src/logic/getFieldValue.ts` | `Controller`のような制御コンポーネントや、`useFieldArray`がやる配列単位の登録・削除には対応しない |
+| 3 | `register`が返す`ref`。DOMノードへの参照を`_fields`に保持し、`setValue`がそのノードの`value`を直接書き換える（非制御コンポーネント）。`_formValues`は`getValues`用のキャッシュとして残す | `src/logic/createFormControl.ts`の`register`関数（`ref`コールバック）、`setFieldValue`、`src/logic/getFieldValue.ts` | ネイティブのDOMノードへの参照を返さないカスタムコンポーネント（`ref`を転送しない関数コンポーネントなど）には値を書き込めない |
 | 4 | `Controller`・`useFieldArray`の骨格。制御コンポーネントの値をcontrolに橋渡しし、配列フィールドの増減を`_subjects.array`で通知する | `src/controller.tsx`、`src/useController.ts`、`src/useFieldArray.ts` | 本の対象範囲（購読の設計）を超えるバリデーションやUI統合は扱わない |
 
 この表は概算であり、各章のパス1・パス3で実ソースに当たって更新する。

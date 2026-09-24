@@ -42,6 +42,19 @@
     ```
   - この安全弁自体（「ほぼ全部変わったなら、個別の判定を飛ばして再描画する」）はミニ実装では作らない。範囲外と明記する
 
+## registerがrefを返す設計（非制御コンポーネント）
+
+- リポジトリの最初期のコミット群（`1ff861bb`「intial commit」は無関係な別プロジェクトの流用で、実質の起点は`57880654`前後）から、`register`はすでに`ref`コールバックとして使う設計だった。README上での命名は`react-forme`（2019年）を経て`react-hook-form`（`b8a48455`、2019-03-21「change packge name to react-hook-form」）に変わったが、`<input ref={(ref) => register({ ref, ... })} />`という使い方自体は変わっていない
+- READMEの機能一覧で、この設計は最初「uncontrolled form validation」という言葉で説明されていた（`b55d9e83`、2019-05-25追加）
+- 1年後のコミット`516965e0`「change "uncontrolled" to "native"」（2020-05-26）で、同じ項目が「native form validation」に書き換えられた。差分はこの1行のみで、PR番号や本文からは理由が読み取れない → 推測: 「制御／非制御」というReact側の語彙ではなく、「HTML標準のフォーム要素をそのまま使う」という立ち位置を強調する言い換えだったと考えられるが、明示的な記述は見つからず
+- `src/logic/getFieldValue.ts`（値の型ごとの読み分け：`isFileInput`→`files`、`isRadioInput`→`getRadioValue`、`isMultipleSelect`→`selectedOptions`、`isCheckBox`→`getCheckboxValue`、それ以外→`getFieldValueAs(ref.value, ...)`）は`git log --follow`で64コミットの変更履歴があり、ごく初期から存在するファイルだと確認できた（最も古い追跡可能なコミットは`02f0af49`「add option to validate mode」で、V7の全面書き換えより前）。ネイティブの入力要素ごとに値の持ち方が違うことへの対応は、後付けではなく設計の初期からの前提である
+
+## MutationObserverの除去（V7）
+
+- V7以前は`register`されたDOMノードが外部から取り除かれたことを検知するために`MutationObserver`を使っていた（初出`6eca1fd6`「add mutation observer」、最初期のコミット群に含まれる）
+- V7の全面書き換え（`9555d16f`、2021-04-01、#3741。チャプター2で扱った`getProxyFormState`のProxy時代と同じコミット）で`MutationObserver`は削除された。現行のソース（`grep -rn "MutationObserver" src/`）にも該当なし
+- 現行版は、`register`が返す`ref`コールバックがReactから`null`で呼ばれること（DOMからの取り外し）そのものを使って`field._f.mount = false`に落としている。「外部の監視で見つける」から「Reactが教えてくれる」への置き換えだが、PR #3741の本文はV7全体の変更をまとめたもので、この一点についての個別の理由の記載は見つからなかった → 推測
+
 ## 未確認・推測
 
 - `createFormControl`という名前自体がいつ確定したか（同名の別実装からのリネームか、新規ファイルとしての追加か）は、shallowなrename検出の限界で追いきれなかった。ファイルの初出コミットはa4b2c0adであることのみ確認済み
