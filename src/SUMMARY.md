@@ -33,5 +33,6 @@
 
 - [ダイジェストについて](digest/README.md)
 - [Daily 2026-09](digest/daily/2026-09.md)
+  - [09-25（金）](digest/daily/2026-09-25.md)
   - [09-24（木）](digest/daily/2026-09-24.md)
   - [09-23（水）](digest/daily/2026-09-23.md)

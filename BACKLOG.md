@@ -161,3 +161,7 @@
 - BunのTLS証明書ホスト名照合の修正：IDNAマッピングとURL構文解析を取り違えた回帰と、差分テストによる検証手法（パート: 新規、出典: https://github.com/oven-sh/bun/pull/43040、2026-09-24 追記）
 - Ladybirdのレイアウトエンジンにおけるsubtree局所性の不変条件とデバッグアサーションによる強制（パート: 新規、出典: https://github.com/LadybirdBrowser/ladybird/commit/cb290b60311af1fdd8b7d44266e9d5aa16a2a43d、2026-09-24 追記）
 - Solid next のrecomputeが再入的なdisposeでフラグを取り落とすバグ：finally節での状態再構築が抱えるリスク（パート: 新規、出典: https://github.com/solidjs/solid/pull/3625、2026-09-24 追記）
+- Bunのプロファイル駆動バイトコード並び替え：構文のハッシュで関数を識別し、プロファイルのビルド間ポータビリティを確保する設計（パート: 新規、出典: https://github.com/oven-sh/bun/pull/43811、2026-09-25 追記）
+- oxcのレキサー演算子ルックアップ表のコンパイル時定数化：const評価によるホットパス最適化を、実行時構造体の削除まで段階的に進めるリファクタリングの型（パート: oxc、出典: https://github.com/oxc-project/oxc/pull/26977、2026-09-25 追記）
+- LadybirdのBlockContainer/Box統合と絶対配置要素のcontaining block自己解決：部分再レイアウトの境界判定を「レイアウトが確定した事実」から導く設計（パート: 新規、出典: https://github.com/LadybirdBrowser/ladybird/commit/07e8ff403b7bb622071e1f762d77decb55fc8838、2026-09-25 追記）
+- Ladybirdのsite isolationオプション撤去とbrowsing context/documentの仕様準拠モデル化：マルチプロセスアーキテクチャの責務分離を仕様の記述に合わせて整理する設計（パート: 新規、出典: https://github.com/LadybirdBrowser/ladybird/commit/e5ebfb8809a5ff66cf5d6c70203cf714202dfb54、2026-09-25 追記）

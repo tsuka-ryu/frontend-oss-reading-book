@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Wed, 23 Sep 2026 22:16:10 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 22:28:01 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-09-25（金）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-09-25.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-09-25.html</guid>
+      <pubDate>Thu, 24 Sep 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[目玉の新機能というより、実行速度と足回りを詰める変更が目立つ一日でした。Bunは実行ファイルの起動を最大2倍速くするプロファイル駆動のバイトコード並び替えを追加し、oxcはレキサーの演算子判定表をコンパイル時に計算し切る最適化を14個のPRで積み上げました。仕様面ではHTML/DOMがイベントハンドラの実行可否チェックを協調して仕様化し、CSSWGはWeb Animationsの暗黙的キーフレームを簡素化しています。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-09-24（木）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-09-24.html</link>
