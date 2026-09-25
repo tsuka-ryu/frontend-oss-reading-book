@@ -55,6 +55,22 @@
 - V7の全面書き換え（`9555d16f`、2021-04-01、#3741。チャプター2で扱った`getProxyFormState`のProxy時代と同じコミット）で`MutationObserver`は削除された。現行のソース（`grep -rn "MutationObserver" src/`）にも該当なし
 - 現行版は、`register`が返す`ref`コールバックがReactから`null`で呼ばれること（DOMからの取り外し）そのものを使って`field._f.mount = false`に落としている。「外部の監視で見つける」から「Reactが教えてくれる」への置き換えだが、PR #3741の本文はV7全体の変更をまとめたもので、この一点についての個別の理由の記載は見つからなかった → 推測
 
+## Controller / useController の導入時期
+
+- `Controller`コンポーネント自体は`src/controller.tsx`として`fa5e71ca`「V4」（2019-12-23、#666）で初出。V7（2021-04-01）より1年以上前から存在する
+- `useController`フック（`src/useController.ts`）は後発で、`b675f819`「custom hook: useController」（2020-12-10、#3488）が初出。`Controller`コンポーネントの内部ロジックをフックとして切り出し、`Controller`自身は`props.render(useController(props))`を呼ぶだけの薄いラッパーになった（現行v7.88.0の`src/controller.tsx`も25行でこの形のまま）
+- 現行の`useController.ts`は内部で`useWatch`（値の購読）と`useFormState`（`fieldState`用）を組み合わせて実装されている。DOMノードを直接書き換える`register`と違い、値をReactのstateとして持ち直す必要があるための構成
+
+## 名前で絞り込む購読（shouldSubscribeByName）の由来
+
+- `src/logic/shouldSubscribeByName.ts`の初出は`c1243995`「fix #6765 useFieldArray trigger validation by field name」（2021-10-12、#6768）
+- この修正の前、`useWatch.ts`は名前の前方一致判定（`currentName.startsWith(signalName) || signalName.startsWith(currentName)`）をインラインで持っていたが、`useFormState.ts`（`useController`が内部で使う）は`convertToArrayPayload(_name.current).includes(formState.name)`という完全一致だけの判定だった
+- この不一致が原因で、配列フィールドの1項目のバリデーションが、別の名前を監視している`useFormState`/`useController`の購読者に対して正しく届かない、または不要に届くバグが起きていた（コミットメッセージの「useFieldArray trigger validation by field name」から）
+- 修正は、`useWatch`側の前方一致ロジックを`shouldSubscribeByName`として切り出し、`useFormState`側もそれを使うように統一する内容だった
+- 名前の一致判定がそもそも「完全一致」ではなく「前方一致（双方向）」である理由は、`"addresses"`を監視している購読者に`"addresses.0.city"`の変化を届け、逆に`"addresses.0.city"`を監視している購読者に`"addresses"`全体の変化を届けるためだと読める（配列・入れ子のパスを扱うために必要な仕組みであり、この章のミニ実装ではFOCUS外として作らない）
+- `exact`引数は後から追加された。`2371e8b4`（2021-11-14、#6983）で`useWatch`/`useFormState`に`exact`propが足され、`390c01e7`（2023-08-24、#10707）で配列名に対する`exact`の扱いが修正され、`de4a917f`（2023-09-21、#10947）で`exact`分岐と非`exact`分岐に重複していたロジックが1本の式に整理された（現行の形）
+- `exact`の役割はミニ実装の対象範囲を超えるため、この章では扱わない。「足りないもの」に明記する
+
 ## 未確認・推測
 
 - `createFormControl`という名前自体がいつ確定したか（同名の別実装からのリネームか、新規ファイルとしての追加か）は、shallowなrename検出の限界で追いきれなかった。ファイルの初出コミットはa4b2c0adであることのみ確認済み
