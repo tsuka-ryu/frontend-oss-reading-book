@@ -57,11 +57,19 @@ FOCUS: 再描画を抑える購読の設計
 ## 章立て案
 
 BACKLOG.mdの章の候補の順を正とする（下の段階計画もこの順に合わせた）。
+4章目は、実ソースに当たった結果、`Controller`と`useFieldArray`を1章にまとめず分割した（次節「4章目の分割について」）。
 
 1. **フォームの値はどこに置かれているか（useFormとcontrol）** — `createFormControl` がReact非依存のプレーン関数である事実、`useForm` はそれを`useRef`で保持するだけの薄い層だという構造
 2. **formStateのどのキーを読んだかを覚える（_proxyFormStateとshouldRenderFormState）** — 読まれたキーだけを記録し、変化したキーがそこに含まれるときだけ再描画する仕組み
 3. **registerと非制御コンポーネント** — `register`がrefを直接DOMに刺す設計、値をJSの複製ではなくDOMそのものから読む理由
-4. **ControllerとuseFieldArray** — 制御コンポーネントを避けられない場面での再描画の閉じ込め方
+4. **Controllerと名前で絞り込む購読** — DOMノードを持たない制御コンポーネントに値を橋渡しし、その名前を読んでいる購読者だけに再描画を絞り込む仕組み
+5. **useFieldArray**（未着手。5章として切り出した） — 配列フィールドの増減をどう`_subjects`に乗せるか
+
+### 4章目の分割について
+
+`spec/BOOK_SPEC.md`第4節は「1章で足す機能は一つにする」「本文（コードと表を除く）は1,500字から3,000字」と定める。
+実ソース（`src/useFieldArray.ts`、548行）を読むと、配列フィールドの増減は`Controller`の値橋渡しとは別の関心（`_names.array`の管理、`fields`配列とkeyの再生成、`_subjects.array`という別のSubjectでの通知）を持ち、1章に収めると4節の上限を超える。
+段階計画（旧版）は両者を1章にまとめていたが、パス1の実ソース確認でこれを分割し、`useFieldArray`をBACKLOG.mdの章の候補に新しい項目として追加した。
 
 ## ミニ実装の段階計画
 
@@ -70,6 +78,7 @@ BACKLOG.mdの章の候補の順を正とする（下の段階計画もこの順�
 | 1 | `createFormControl`・`createSubject`・`useForm`の骨格。`_formValues`に値を置き、`isDirty`が変わったときだけ通知する | `src/logic/createFormControl.ts`、`src/utils/createSubject.ts`、`src/useForm.ts` | 読んでいないキー（`errors`のみ読むコンポーネントなど）の変化でも再描画してしまう |
 | 2 | `_proxyFormState`（読んだキーの記録）、`getProxyFormState`（読み取り時にフラグを立てるgetter）、`shouldRenderFormState`（変化したキーが読まれていたときだけ通知を通す） | `src/logic/getProxyFormState.ts`、`src/logic/shouldRenderFormState.ts` | `_formValues`はonChangeが呼ばれたときしか更新されないため、DOM側で直接書き換えられた値（ブラウザの自動入力や外部からの操作）を拾えない |
 | 3 | `register`が返す`ref`。DOMノードへの参照を`_fields`に保持し、`setValue`がそのノードの`value`を直接書き換える（非制御コンポーネント）。`_formValues`は`getValues`用のキャッシュとして残す | `src/logic/createFormControl.ts`の`register`関数（`ref`コールバック）、`setFieldValue`、`src/logic/getFieldValue.ts` | ネイティブのDOMノードへの参照を返さないカスタムコンポーネント（`ref`を転送しない関数コンポーネントなど）には値を書き込めない |
-| 4 | `Controller`・`useFieldArray`の骨格。制御コンポーネントの値をcontrolに橋渡しし、配列フィールドの増減を`_subjects.array`で通知する | `src/controller.tsx`、`src/useController.ts`、`src/useFieldArray.ts` | 本の対象範囲（購読の設計）を超えるバリデーションやUI統合は扱わない |
+| 4 | `controller`（`register`のControlled版）と、名前で絞り込む`_subscribe`。`_subjects.state.next`に`name`を乗せ、購読側は自分の名前と一致した通知だけを受け取る | `src/useController.ts`、`src/controller.tsx`、`src/logic/shouldSubscribeByName.ts` | 名前の一致は完全一致のみ。`useFieldArray`が使う`"addresses.0.city"`のような入れ子・配列パスの前方一致には対応しない |
+| 5（未着手） | `useFieldArray`の骨格。配列フィールドの増減を`_names.array`と`_subjects.array`で通知する | `src/useFieldArray.ts` | 本の対象範囲（購読の設計）を超えるバリデーションやUI統合は扱わない |
 
 この表は概算であり、各章のパス1・パス3で実ソースに当たって更新する。
