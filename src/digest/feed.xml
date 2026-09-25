@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Thu, 24 Sep 2026 22:28:01 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2026 22:30:20 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-09-26（土）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-09-26.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-09-26.html</guid>
+      <pubDate>Fri, 25 Sep 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[文字列としてのホスト名解釈が複数レイヤーでズレると検証が抜ける、という教訓が目立つ一日でした。Bunがワイルドカード証明書のホスト名照合とIPリテラル解析を厳格化し、同時期にNode.jsも`--allow-net`権限チェックをファイルディスクリプタ経由でバイパスできる穴を塞いでいます。仕様面ではHTMLがメディア要素の`loading`属性を読むタイミングを修正し、Next.jsはページ/レイアウトの区別を捨てたキャッシュ木構造の統一に着手しました。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-09-25（金）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-09-25.html</link>
