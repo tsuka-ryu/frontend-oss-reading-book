@@ -34,18 +34,19 @@
 
 ## React Hook Form（rhf）
 
-- [~] パス1 骨格（全章。1〜3章目は着手済み。段階計画を追加、残り1章は未着手）
+- [~] パス1 骨格（全章。1〜4章目は着手済み。4章目でControllerとuseFieldArrayを分割し、useFieldArrayを5章として追加。5章は未着手）
 - [ ] パス2 検証
-- [~] パス3 なぜを足す（全章。1〜3章目は着手済み）
-- [~] パス4 本文化（1〜3章目のみ「作る＋本物を読む」形式で完了）
-- [~] パス5 規範による点検（1〜3章目のみ）
+- [~] パス3 なぜを足す（全章。1〜4章目は着手済み）
+- [~] パス4 本文化（1〜4章目のみ「作る＋本物を読む」形式で完了）
+- [~] パス5 規範による点検（1〜4章目のみ）
 
 章の候補：
 
 - [x] フォームの値はどこに置かれているか（useFormとcontrol）
 - [x] formStateのどのキーを読んだかを覚える（_proxyFormState と shouldRenderFormState）
 - [x] registerと非制御コンポーネント
-- [ ] ControllerとuseFieldArray
+- [x] Controllerと名前で絞り込む購読（旧項目「ControllerとuseFieldArray」を分割。理由は`draft/rhf/pass1-skeleton.md`の「4章目の分割について」）
+- [ ] useFieldArray
 
 ## oxc（oxc）
 
