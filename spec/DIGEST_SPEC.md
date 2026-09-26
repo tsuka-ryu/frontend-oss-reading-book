@@ -5,11 +5,12 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 
 ## 目的と読者
 
-- 読者は、Web仕様・ブラウザ実装・React/Next.jsやツールチェーンなどOSSの内部を理解したいエンジニア
+- 読者は、Web仕様・ブラウザ実装・フロントエンドフレームワーク・コンパイラの内部を理解したいエンジニア
 - 目的はOSSへの貢献ではなく「中身の理解」。何が変わったかより、なぜそう変えたか・どういう仕組みかを重視する
 - とくに「機能がどう考えられ、どう決まり、どう実装されるか」の流れが見えるように書く
 - スマホで読み物として読む。見出しと短い段落で、流し読みしやすくする
 - 最初は対象を広く取り、件数も絞らない。ただし詳しく書くのは興味深いものだけにし、それ以外は一言にまとめる。読者が号を眺めて、いらない対象をこのファイルから外していく
+- ランタイム（Node.js、Bun）やバンドラ（Rolldown）の内部実装は、読者の興味の外なので対象にしない
 - 読者像と文体は、CLAUDE.mdの「書き方」ではなくこのファイルに従う
 
 ## 共通ルール
@@ -115,7 +116,7 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 
 - 各ニュースは見出しで始める（見出しのレベルは各節の指定に従う。指定がなければ `###`）
 - 見出しはニュースの見出しとして書く。主語と動きが一目で分かる短い文にする（例：「HTMLに `<X>` 要素が入る」「oxcのパーサーが〇〇に対応」）。PRタイトルをそのまま使わない
-- 本文の先頭に分野タグを付ける：`【HTML】` `【DOM】` `【Fetch】` `【Streams】` `【URL】` `【TC39】` `【CSS】` `【ARIA】` `【WCAG】` `【ServiceWorker】` `【WICG】` `【ブラウザ】` `【Interop】` `【React】` `【Next.js】` `【Vite】` `【Rolldown】` `【oxc】` `【Node.js】` `【TypeScript】` `【Biome】` `【Solid】` `【RHF】` `【Bun】` `【Ladybird】` `【脆弱性】`
+- 本文の先頭に分野タグを付ける：`【HTML】` `【DOM】` `【Fetch】` `【Streams】` `【URL】` `【TC39】` `【CSS】` `【ARIA】` `【WCAG】` `【ServiceWorker】` `【WICG】` `【ブラウザ】` `【Interop】` `【React】` `【Next.js】` `【Vite】` `【oxc】` `【TypeScript】` `【Biome】` `【Solid】` `【Svelte】` `【Vue】` `【RHF】` `【Ladybird】` `【Servo】` `【GHC】` `【Wado】` `【脆弱性】`
 - 各ニュースの最後に `出典:` としてURLを付ける
 
 ### 今日のリリース
@@ -257,15 +258,17 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 - facebook/react
 - vercel/next.js
 - vitejs/vite
-- rolldown/rolldown
 - oxc-project/oxc
-- nodejs/node
-- oven-sh/bun
 - microsoft/TypeScript（Goへの移植版もここで開発されている。microsoft/typescript-go は2026-08-20にクローズ済み）
 - biomejs/biome
 - solidjs/solid の `main` と `next` ブランチ（`main` は本のシグナルのパートが読んでいる1.x系、`next` は次のメジャー版の開発）
 - react-hook-form/react-hook-form（本のRHFのパートが読んでいるリポジトリ）
-- LadybirdBrowser/ladybird（ブランチは `master`。独自に作られているブラウザエンジンで、仕様がどう実装されるかを追える）
+- sveltejs/svelte（runesのコンパイラとランタイム）
+- vuejs/core の `minor` ブランチ（Vapor Modeの `compiler-vapor` と `runtime-vapor` はこのブランチで開発されている。2026-09-26時点で `main` にはない）
+- LadybirdBrowser/ladybird（ブランチは `master`。独自に作られているブラウザエンジンで、仕様がどう実装されるかを追える。本のLadybirdのパートが読んでいるリポジトリ）
+- servo/servo と servo/stylo（本のServoのパートが読んでいるリポジトリ。StyloはServoとFirefoxが共有するスタイル計算の実装で、別リポジトリで開発されている）
+- ghc/ghc（本のパートにはせず、変更だけを追う。ブランチは `master`。gitlab.haskell.orgのGitHubミラー。マージリクエストの議論はGitLabにあり、読めないことがあるので、そのときはコミットメッセージを根拠にする）
+- wado-lang/wado（Wasm Component Modelだけを出力先にする言語。コミットが1日100件を超えるので、`docs/wep-*.md` の追加・変更と、言語やコンパイラの設計に関わるPRを中心に拾い、それ以外は件数だけ書く）
 
 既定のブランチ以外を見る対象は、ブランチ名を書いておく。
 
@@ -302,7 +305,9 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 - tc39/proposals でStageが変わった提案、またはStage 1〜3の提案リポジトリのIssueで議論が進んだもの
 - WHATWGとCSSWGのIssueのうち、会議で決まったこと（CSSWGの決定事項のコメントなど）が書き込まれたもの
 - reactjs/rfcs のPRとIssue
-- nodejs/TSC のIssue
+- vuejs/rfcs のPRと、Discussionsの「RFC Discussions」カテゴリ（Vueの新しいRFCは、まずDiscussionsに出る）
+- sveltejs/rfcs のPRと、sveltejs/svelte のDiscussionsの「Ideas」と「Announcements」カテゴリ（sveltejs/rfcs は2024-01以降に新しいPRがないため、Discussionsもあわせて見る）
+- solidjs/solid のDiscussionsの「Ideas」カテゴリ（SolidにはRFC用のリポジトリもカテゴリもなく、RFCはここに「RFC:」を付けて出る）
 - vercel/next.js のDiscussions（RFCカテゴリ）
 - oxc-project/oxc のDiscussionsと、設計に関わるIssue（RFCやtrackingのラベルがついたもの）
 
@@ -313,9 +318,9 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 
 対象:
 - GitHub Advisory Database（npmエコシステム）で、次のパッケージの新規アドバイザリ
-  - react, react-dom, next, vite, rolldown
+  - react, react-dom, next, vite
+  - svelte, vue
   - oxcのnpmパッケージ（oxlint, oxc-parser など）
-- nodejs.org のセキュリティリリース告知
 
 ルール:
 - アドバイザリのページと、修正コミット（cloneしたリポジトリ）を根拠にする

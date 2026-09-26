@@ -22,11 +22,15 @@
 ここに書かれていないファイルはビルドされない。
 
 # oxc
-# Vite / Rolldown
+# Svelte 5
+# Vue Vapor Mode
+# Vite
 # React
 # Next.js
-# Node.js
+# TC39 Signals 提案
 # Rust コンパイラ
+# Wado
+# Ladybird
 # Servo
 -->
 
