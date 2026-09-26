@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Fri, 25 Sep 2026 22:30:20 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 22:29:47 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-09-27（日）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-09-27.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-09-27.html</guid>
+      <pubDate>Sat, 26 Sep 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[仕様まわりはUTCの週末に沈んだ静かな一日でしたが、OSS側は「所有権と同一性をどう再定義するか」が揃った日でした。Solid nextはサーバーコンポーネントを常設SSE接続に載せ替える大改修の第2弾を投入し、Wadoはコンパイラの名前解決を全面書き換え、Servoはクロスオリジンオブジェクトの実装をGeckoに合わせて統合しています。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-09-26（土）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-09-26.html</link>

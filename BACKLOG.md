@@ -289,3 +289,8 @@
 - Solid next のCLIENT_HOLEをPromiseから凍結thenableに変える設計：「Promise風の振る舞い」と「本物のPromise」を分ける判断（パート: 新規、出典: https://github.com/solidjs/solid/pull/3658、2026-09-26 追記）
 - LadybirdのGCディスパッチをC++ vtableから型ごとのCellTypeInfoテーブルに変える設計：Rust移行を見据えたポリモーフィズムの脱・vtable化（パート: ladybird、出典: https://github.com/LadybirdBrowser/ladybird/pull/12175、2026-09-26 追記）
 - Next.jsのRouteTree統合：ページ/レイアウトの区別を捨てたキャッシュ木構造の再設計（パート: nextjs、出典: https://github.com/vercel/next.js/pull/98970、2026-09-26 追記）
+- Solidのサーバーコンポーネント常設SSE接続化「Stage 8」：毎回リクエストする素朴な実装から、差分ストリーミングへ踏み込む設計（パート: 新規、出典: https://github.com/solidjs/solid/pull/3660、2026-09-27 追記）
+- Solid nextのstore列挙操作がキーごとの「存在ノード」を作らなくなる最適化：購読の粒度をkey-setノード1個に統一する設計（パート: 新規、出典: https://github.com/solidjs/solid/pull/3668、2026-09-27 追記）
+- WadoのC-style for文、クロージャが反復ごとに独立した束縛をキャプチャするようになった修正：JavaScriptの`let`ループ変数問題との収束（パート: wado、出典: https://github.com/wado-lang/wado/pull/2173、2026-09-27 追記）
+- Wadoの名前解決全面書き換え：綴りベースの解決からスコープが指す宣言そのものによる解決へ（パート: wado、出典: https://github.com/wado-lang/wado/pull/2172、2026-09-27 追記）
+- Servoのクロスオリジン`Location`実装統合：独自の別型実装からGeckoに合わせた単一型＋分岐へ寄せる設計判断（パート: servo、出典: https://github.com/servo/servo/pull/48417、2026-09-27 追記）
