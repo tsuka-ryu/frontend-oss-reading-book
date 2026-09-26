@@ -22,10 +22,9 @@
 ここに書かれていないファイルはビルドされない。
 
 # oxc
-# Vite / Rolldown
+# Vite
 # React
 # Next.js
-# Node.js
 # Rust コンパイラ
 # Servo
 -->
