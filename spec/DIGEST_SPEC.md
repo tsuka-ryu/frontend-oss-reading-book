@@ -116,7 +116,7 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 
 - 各ニュースは見出しで始める（見出しのレベルは各節の指定に従う。指定がなければ `###`）
 - 見出しはニュースの見出しとして書く。主語と動きが一目で分かる短い文にする（例：「HTMLに `<X>` 要素が入る」「oxcのパーサーが〇〇に対応」）。PRタイトルをそのまま使わない
-- 本文の先頭に分野タグを付ける：`【HTML】` `【DOM】` `【Fetch】` `【Streams】` `【URL】` `【TC39】` `【CSS】` `【ARIA】` `【WCAG】` `【ServiceWorker】` `【WICG】` `【ブラウザ】` `【Interop】` `【React】` `【Next.js】` `【Vite】` `【oxc】` `【TypeScript】` `【Biome】` `【Solid】` `【Svelte】` `【Vue】` `【RHF】` `【Ladybird】` `【GHC】` `【脆弱性】`
+- 本文の先頭に分野タグを付ける：`【HTML】` `【DOM】` `【Fetch】` `【Streams】` `【URL】` `【TC39】` `【CSS】` `【ARIA】` `【WCAG】` `【ServiceWorker】` `【WICG】` `【ブラウザ】` `【Interop】` `【React】` `【Next.js】` `【Vite】` `【oxc】` `【TypeScript】` `【Biome】` `【Solid】` `【Svelte】` `【Vue】` `【RHF】` `【Ladybird】` `【GHC】` `【Wado】` `【脆弱性】`
 - 各ニュースの最後に `出典:` としてURLを付ける
 
 ### 今日のリリース
@@ -267,6 +267,7 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 - vuejs/core の `minor` ブランチ（Vapor Modeの `compiler-vapor` と `runtime-vapor` はこのブランチで開発されている。2026-09-26時点で `main` にはない）
 - LadybirdBrowser/ladybird（ブランチは `master`。独自に作られているブラウザエンジンで、仕様がどう実装されるかを追える）
 - ghc/ghc（ブランチは `master`。gitlab.haskell.orgのGitHubミラー。マージリクエストの議論はGitLabにあり、読めないことがあるので、そのときはコミットメッセージを根拠にする）
+- wado-lang/wado（Wasm Component Modelだけを出力先にする言語。コミットが1日100件を超えるので、`docs/wep-*.md` の追加・変更と、言語やコンパイラの設計に関わるPRを中心に拾い、それ以外は件数だけ書く）
 
 既定のブランチ以外を見る対象は、ブランチ名を書いておく。
 

@@ -31,6 +31,7 @@
 # Rust コンパイラ
 # GHC
 # MoonBit
+# Wado
 # Ladybird
 # Servo
 -->

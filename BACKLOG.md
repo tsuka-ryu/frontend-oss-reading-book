@@ -200,6 +200,22 @@
 - Coreでの不要コード削除（`core_dce.ml`）と、出力サイズへのこだわり
 - パターンマッチのコンパイル（`transl_match.ml`）
 
+## Wado（wado）
+
+- [ ] パス1 骨格
+- [ ] パス2 検証
+- [ ] パス3 なぜを足す
+- [ ] パス4 本文化
+- [ ] パス5 規範による点検
+
+章の候補：
+
+- なぜWasm Component ModelとWASI 0.3だけを出力先にするか（`docs/design-philosophy.md`、`docs/wep-2026-01-11-wasi-p3-only.md`）
+- パイプラインと3層のIR：TIR、NIR、WIR（`docs/compiler.md`）
+- エフェクトはWASIのcapability：`with Stdout` を型として検査する（`effect_check.rs`）
+- トレイト呼び出しをすべて静的に解決する：vtableを持たない設計
+- GCをモジュールに同梱しない：Wasm GCにメモリ管理を任せる（`docs/wep-2026-03-28-gc-in-components.md`）
+
 ## Ladybird（ladybird）
 
 - [ ] パス1 骨格
