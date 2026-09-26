@@ -29,6 +29,8 @@
 # Next.js
 # TC39 Signals 提案
 # Rust コンパイラ
+# GHC
+# MoonBit
 # Ladybird
 # Servo
 -->

@@ -24,6 +24,8 @@ Claude Code に渡す指示書として使う。
 | Next.js | nextjs | `/tmp/oss/next.js` | RSCの境界がどこにどう引かれているか | デプロイ、ホスティング固有の機能 |
 | TC39 Signals 提案 | tc39-signals | `/tmp/oss/proposal-signals` | 提案の仕様文とpolyfillの依存追跡、Watcherの設計 | 各フレームワークの採用状況 |
 | Rust コンパイラ | rustc | `/tmp/oss/rust` | クエリシステムとインクリメンタルコンパイル | 型推論・借用検査の個別規則、LLVMコード生成 |
+| GHC | ghc | `/tmp/oss/ghc`（GitHubのミラー `ghc/ghc`） | Core中間言語と、遅延評価をJavaScriptに載せるStgToJS | 型検査器の個別規則、Cmm以降のネイティブコード生成、RTSのGC、Template Haskell |
+| MoonBit | moonbit | `/tmp/oss/moonbit-compiler` | CoreからClamを経てWasm GCを出力するまでのパイプライン | 型検査器の個別規則、ビルドツール（moon）、標準ライブラリ |
 | Ladybird | ladybird | `/tmp/oss/ladybird` | HTMLのパース（トークナイザとツリー構築）とイベントループを、仕様の手順と並べて読む | LibJS、レイアウトと描画、ネットワーク、GUI |
 | Servo | servo | `/tmp/oss/servo` | スタイル計算（Stylo）の並列化と再スタイルの無効化 | WebRender、DOMスクリプト統合 |
 
@@ -33,10 +35,14 @@ ReactはシグナルとNext.jsの間に置く。シグナルとの対比でス�
 SvelteとVue Vaporはoxcの後ろに置く。パーサとASTを知ったうえで、フレームワークのコンパイラがテンプレートを何に変換するかを読むためである。どちらも出力先はシグナルなので、シグナルのパートとも対比できる。
 TC39 Signals提案はNext.jsの後ろに置く。Solid、Vue、Svelte、Reactの設計を見たうえで、標準にするなら何を共通にできるかを考えるためである。
 rustcはoxcとViteの後ろに置く。ASTの表現とHMRの無効化を知ったうえで、クエリシステムを依存追跡の一般化として読むためである。
+GHCはrustcの後ろに置く。rustcとは違う中間言語の設計（型付きの小さなCore）と、遅延評価という実行モデルを、JavaScriptバックエンドを通してフロントエンドにつなげて読むためである。
+MoonBitはGHCの後ろに置く。Wasm GCを出力先にする言語を読み、ブラウザが言語実装の土台になっていることを確かめてからブラウザエンジンのパートに入る。
+MoonBitのコンパイラは公開リポジトリの履歴が薄い（2026-09-26時点で13コミット、最後のコミットは2025-09-29）。git履歴から「なぜ」を取れない箇所は、公式のドキュメントとブログを根拠にし、そのことを本文に明記する。
+GHCの開発はgitlab.haskell.orgで行われている。この実行環境からは接続できないため、コードと履歴はGitHubのミラーから読み、マージリクエストの議論は読めない前提で進める。
 LadybirdはServoの直前に置く。仕様の文章とコードの対応を先に見ておくと、Servoでは並列化という仕様の外の工夫に集中できる。
 Servoは最後に置く。oxcとrustcでRustの語彙が揃い、シグナルで学んだ再計算の無効化がスタイル計算にも現れることを確かめて本を閉じる。
 
-rustc、Ladybird、Servoは範囲の絞り込みを強く効かせる。
+rustc、GHC、Ladybird、Servoは範囲の絞り込みを強く効かせる。
 いずれも履歴が長く規模も大きいため、全体を読もうとすると破綻する。
 
 `FOCUS` が空のパートは書き始めない。
