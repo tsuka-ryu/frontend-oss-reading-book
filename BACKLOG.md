@@ -169,37 +169,6 @@
 
 章の候補はパス1で決める（FOCUS：クエリシステムとインクリメンタルコンパイル）。
 
-## GHC（ghc）
-
-- [ ] パス1 骨格
-- [ ] パス2 検証
-- [ ] パス3 なぜを足す
-- [ ] パス4 本文化
-- [ ] パス5 規範による点検
-
-章の候補：
-
-- コンパイラのパイプライン：Haskellのソースから、Core、STGへ
-- Core：型付きの小さな中間言語に全部を落とす設計
-- 型クラスは辞書を渡すコードになる
-- 遅延評価の実装：サンク（thunk）と更新
-- JavaScriptバックエンド（StgToJS）：遅延評価をJSの上にどう載せるか
-
-## MoonBit（moonbit）
-
-- [ ] パス1 骨格
-- [ ] パス2 検証
-- [ ] パス3 なぜを足す
-- [ ] パス4 本文化
-- [ ] パス5 規範による点検
-
-章の候補：
-
-- コンパイラのパイプライン：typedtreeからCore、Clam、Wasmへ
-- Wasm GCを出力先にする意味：GCを自前で持たない言語実装
-- Coreでの不要コード削除（`core_dce.ml`）と、出力サイズへのこだわり
-- パターンマッチのコンパイル（`transl_match.ml`）
-
 ## Wado（wado）
 
 - [ ] パス1 骨格
@@ -249,12 +218,12 @@
 
 - next/ogの画像生成（ImageResponse）とSVGシリアライズの安全性：属性値のXMLエスケープを境界に寄せる設計（パート: nextjs、出典: https://github.com/vercel/next.js/pull/99061、2026-09-23 追記）
 - Solid 2.0（nextブランチ）のトランザクション型シグナルと楽観的更新：held truth・laneパス・A29ルールなど1.x系にはない設計（パート: 新規、出典: https://github.com/solidjs/solid/pull/3590、2026-09-23 追記）
-- Ladybirdのプロセス分離とライブラリ切り出し：CompositorプロセスをLibWeb/LibWebViewから独立させたLibCompositingの設計（パート: 新規、出典: https://github.com/LadybirdBrowser/ladybird/pull/12152、2026-09-23 追記）
-- Ladybirdのレイアウトエンジンにおけるsubtree局所性の不変条件とデバッグアサーションによる強制（パート: 新規、出典: https://github.com/LadybirdBrowser/ladybird/commit/cb290b60311af1fdd8b7d44266e9d5aa16a2a43d、2026-09-24 追記）
+- Ladybirdのプロセス分離とライブラリ切り出し：CompositorプロセスをLibWeb/LibWebViewから独立させたLibCompositingの設計（パート: ladybird、出典: https://github.com/LadybirdBrowser/ladybird/pull/12152、2026-09-23 追記）
+- Ladybirdのレイアウトエンジンにおけるsubtree局所性の不変条件とデバッグアサーションによる強制（パート: ladybird、出典: https://github.com/LadybirdBrowser/ladybird/commit/cb290b60311af1fdd8b7d44266e9d5aa16a2a43d、2026-09-24 追記）
 - Solid next のrecomputeが再入的なdisposeでフラグを取り落とすバグ：finally節での状態再構築が抱えるリスク（パート: 新規、出典: https://github.com/solidjs/solid/pull/3625、2026-09-24 追記）
 - oxcのレキサー演算子ルックアップ表のコンパイル時定数化：const評価によるホットパス最適化を、実行時構造体の削除まで段階的に進めるリファクタリングの型（パート: oxc、出典: https://github.com/oxc-project/oxc/pull/26977、2026-09-25 追記）
-- LadybirdのBlockContainer/Box統合と絶対配置要素のcontaining block自己解決：部分再レイアウトの境界判定を「レイアウトが確定した事実」から導く設計（パート: 新規、出典: https://github.com/LadybirdBrowser/ladybird/commit/07e8ff403b7bb622071e1f762d77decb55fc8838、2026-09-25 追記）
-- Ladybirdのsite isolationオプション撤去とbrowsing context/documentの仕様準拠モデル化：マルチプロセスアーキテクチャの責務分離を仕様の記述に合わせて整理する設計（パート: 新規、出典: https://github.com/LadybirdBrowser/ladybird/commit/e5ebfb8809a5ff66cf5d6c70203cf714202dfb54、2026-09-25 追記）
+- LadybirdのBlockContainer/Box統合と絶対配置要素のcontaining block自己解決：部分再レイアウトの境界判定を「レイアウトが確定した事実」から導く設計（パート: ladybird、出典: https://github.com/LadybirdBrowser/ladybird/commit/07e8ff403b7bb622071e1f762d77decb55fc8838、2026-09-25 追記）
+- Ladybirdのsite isolationオプション撤去とbrowsing context/documentの仕様準拠モデル化：マルチプロセスアーキテクチャの責務分離を仕様の記述に合わせて整理する設計（パート: ladybird、出典: https://github.com/LadybirdBrowser/ladybird/commit/e5ebfb8809a5ff66cf5d6c70203cf714202dfb54、2026-09-25 追記）
 - Solid next のCLIENT_HOLEをPromiseから凍結thenableに変える設計：「Promise風の振る舞い」と「本物のPromise」を分ける判断（パート: 新規、出典: https://github.com/solidjs/solid/pull/3658、2026-09-26 追記）
-- LadybirdのGCディスパッチをC++ vtableから型ごとのCellTypeInfoテーブルに変える設計：Rust移行を見据えたポリモーフィズムの脱・vtable化（パート: 新規、出典: https://github.com/LadybirdBrowser/ladybird/pull/12175、2026-09-26 追記）
+- LadybirdのGCディスパッチをC++ vtableから型ごとのCellTypeInfoテーブルに変える設計：Rust移行を見据えたポリモーフィズムの脱・vtable化（パート: ladybird、出典: https://github.com/LadybirdBrowser/ladybird/pull/12175、2026-09-26 追記）
 - Next.jsのRouteTree統合：ページ/レイアウトの区別を捨てたキャッシュ木構造の再設計（パート: nextjs、出典: https://github.com/vercel/next.js/pull/98970、2026-09-26 追記）

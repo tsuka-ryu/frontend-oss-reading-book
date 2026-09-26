@@ -265,8 +265,8 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 - react-hook-form/react-hook-form（本のRHFのパートが読んでいるリポジトリ）
 - sveltejs/svelte（runesのコンパイラとランタイム）
 - vuejs/core の `minor` ブランチ（Vapor Modeの `compiler-vapor` と `runtime-vapor` はこのブランチで開発されている。2026-09-26時点で `main` にはない）
-- LadybirdBrowser/ladybird（ブランチは `master`。独自に作られているブラウザエンジンで、仕様がどう実装されるかを追える）
-- ghc/ghc（ブランチは `master`。gitlab.haskell.orgのGitHubミラー。マージリクエストの議論はGitLabにあり、読めないことがあるので、そのときはコミットメッセージを根拠にする）
+- LadybirdBrowser/ladybird（ブランチは `master`。独自に作られているブラウザエンジンで、仕様がどう実装されるかを追える。本のLadybirdのパートが読んでいるリポジトリ）
+- ghc/ghc（本のパートにはせず、変更だけを追う。ブランチは `master`。gitlab.haskell.orgのGitHubミラー。マージリクエストの議論はGitLabにあり、読めないことがあるので、そのときはコミットメッセージを根拠にする）
 - wado-lang/wado（Wasm Component Modelだけを出力先にする言語。コミットが1日100件を超えるので、`docs/wep-*.md` の追加・変更と、言語やコンパイラの設計に関わるPRを中心に拾い、それ以外は件数だけ書く）
 
 既定のブランチ以外を見る対象は、ブランチ名を書いておく。
@@ -315,6 +315,7 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 対象:
 - GitHub Advisory Database（npmエコシステム）で、次のパッケージの新規アドバイザリ
   - react, react-dom, next, vite
+  - svelte, vue
   - oxcのnpmパッケージ（oxlint, oxc-parser など）
 
 ルール:
