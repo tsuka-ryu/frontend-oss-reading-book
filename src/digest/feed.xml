@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Sat, 26 Sep 2026 22:29:47 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 22:15:15 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-09-29（火）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-09-29.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-09-29.html</guid>
+      <pubDate>Mon, 28 Sep 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[Next.jsが「ナビゲーション時に一切サーバー計算をしない」を保証する `ensureStatic = "navigation"` の初期実装を入れました。あわせてoxlint v1.86.0 / oxfmt v0.71.0が出ています。（前号は9/27で、9/28号は出ていないため、9/27〜9/29朝の約2日分をまとめています）]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-09-27（日）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-09-27.html</link>
