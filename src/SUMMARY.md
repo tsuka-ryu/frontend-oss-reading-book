@@ -9,6 +9,7 @@
 - [メモはいつ計算し直すか](signals/03-memo.md)
 - [使わなくなった依存をどう外すか](signals/04-cleanup.md)
 - [入れ子の計算を誰が片付けるか](signals/05-owner.md)
+- [読んでも覚えさせないにはどうするか](signals/06-untrack.md)
 
 # React Hook Form
 
