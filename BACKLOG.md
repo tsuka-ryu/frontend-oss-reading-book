@@ -22,8 +22,8 @@
 表の順に回す。「次」の印を、書くたびに一つ下へ移す。
 
 - シグナル（signals）
-- React Hook Form（rhf）　← 次
-- oxc（oxc）
+- React Hook Form（rhf）
+- oxc（oxc）　← 次
 - Svelte 5（svelte）
 - Vue Vapor Mode（vue-vapor）
 - Vite（vite）
@@ -82,7 +82,7 @@
 - [x] 2. formStateのどのキーを読んだかを覚える
 - [x] 3. registerと非制御コンポーネント
 - [x] 4. Controllerと名前で絞り込む購読
-- [ ] 5. 名前の中のドットは、誰に知らせるかをどう変えるのか
+- [x] 5. 名前の中のドットは、誰に知らせるかをどう変えるのか
 - [ ] 6. watchは、なぜフォーム全体を描き直すのか
 - [ ] 7. useWatchは、描き直しをどこまで小さくできるのか
 - [ ] 8. useFormStateは、同じformStateを部品ごとにどう読み分けるのか
