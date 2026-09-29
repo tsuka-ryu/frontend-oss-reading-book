@@ -17,6 +17,7 @@
 - [formStateのどのキーを読んだかを覚える](rhf/02-proxy-form-state.md)
 - [registerと非制御コンポーネント](rhf/03-register-and-uncontrolled.md)
 - [Controllerと名前で絞り込む購読](rhf/04-controller.md)
+- [名前の中のドットは、誰に知らせるかをどう変えるのか](rhf/05-nested-names.md)
 
 <!--
 パートを追加するときは、ここに `# パート名` と章の行を足す。
