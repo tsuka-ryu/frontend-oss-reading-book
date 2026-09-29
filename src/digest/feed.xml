@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Mon, 28 Sep 2026 22:15:15 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 22:16:20 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-09-30（水）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-09-30.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-09-30.html</guid>
+      <pubDate>Tue, 29 Sep 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[TC39の9月会議（9/29）で、Iterator Join・Iterator Includes・Iterator Chunking の3提案がそろってStage 4（仕様確定）に進みました。OSS側では、Solid nextが「SSRの非同期エラーが別リクエストの `onError` に届く」不具合を直しています。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-09-29（火）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-09-29.html</link>
