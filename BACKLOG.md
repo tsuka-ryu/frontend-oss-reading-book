@@ -315,3 +315,4 @@
 - WadoのC-style for文、クロージャが反復ごとに独立した束縛をキャプチャするようになった修正：JavaScriptの`let`ループ変数問題との収束（パート: wado、出典: https://github.com/wado-lang/wado/pull/2173、2026-09-27 追記）
 - Wadoの名前解決全面書き換え：綴りベースの解決からスコープが指す宣言そのものによる解決へ（パート: wado、出典: https://github.com/wado-lang/wado/pull/2172、2026-09-27 追記）
 - Servoのクロスオリジン`Location`実装統合：独自の別型実装からGeckoに合わせた単一型＋分岐へ寄せる設計判断（パート: servo、出典: https://github.com/servo/servo/pull/48417、2026-09-27 追記）
+- Vueリアクティビティのflush：購読者の例外でバッチを止めず、最初の例外を最後に再送出する設計（パート: signals、出典: https://github.com/vuejs/core/pull/15676、2026-10-01 追記）
