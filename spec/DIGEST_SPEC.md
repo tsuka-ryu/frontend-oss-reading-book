@@ -50,6 +50,18 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
   - このリポジトリへのIssue作成: GitHub MCP（または `gh`）
 - 実行環境によっては、他のリポジトリにGitHub APIや `gh` でアクセスできない。使えない手段に頼らない
 - web検索も使ってよい
+- 実行環境から届くホストと届かないホスト（2026-10-01に確認）。届かないホストは、試さずに下の代わりの手段を使う
+
+| 取りたいもの | 届くか | 使う手段 |
+|---|---|---|
+| github.com のページ（PR本文・レビュー、Issue、Discussions、リリース、アドバイザリ、ファイルとコミット履歴） | WebFetchで届く。`curl` とGitHub APIは403 | WebFetch |
+| raw.githubusercontent.com | `curl` でもWebFetchでも届く | ファイル1つを丸ごと読むとき |
+| 仕様の本文（html.spec.whatwg.org、tc39.es、www.w3.org、drafts.csswg.org） | 届かない（egressでブロック） | cloneした仕様リポジトリのソース（whatwg/htmlの `source`、tc39/ecma262の `spec.html`、csswg-draftsの `.bs`）を読む |
+| chromestatus.com、groups.google.com（blink-dev）、developer.chrome.com、webstatus.dev、www.mail-archive.com | 届かない | 下の「ブラウザの実装」の代わりの手段 |
+| source.chromium.org、chromium.googlesource.com、searchfox.org、bugs.webkit.org、bugzilla.mozilla.org、issues.chromium.org | 届かない | GitHubのミラー（`chromium/chromium`、`WebKit/WebKit`、`mozilla-firefox/firefox`）のファイルやコミット履歴をWebFetchで読む |
+| gitlab.haskell.org（GHCのマージリクエスト） | 届かない | ghc/ghc のGitHubミラーをcloneし、コミットメッセージを根拠にする |
+
+- 届かないホストのせいで節が空になるときは、その節に「取得できず（<ホスト名>はegressでブロック）」と書く。ブロックを解くには、環境の設定のネットワークアクセスで、そのホストを許可するドメインに足す
 - 取得できなかった対象は、推測で埋めずに「取得できず（理由）」と書く。書く場所は号の中の該当する節（例：脆弱性の節に「取得できず（403）」）。通知の文面だけに書いて節を省略すると、「該当なし」と区別がつかなくなる
 - 推測で書かない。各項目に元のPR・コミット・Issue・Discussion・アドバイザリのURLを必ず付ける
 - 調べて分からなかったことは「不明」と書く
@@ -68,8 +80,8 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 - cloneの直後に `git -C /tmp/oss/<name> fetch -q --tags origin` を実行する
   - cloneで取れるのは、cloneしたブランチの履歴にあるタグだけ。バックポート用のブランチで打たれたリリース（例：Next.jsの `v16.3.8`、`v15.5.27`。既定ブランチは `canary`）は、これをしないと見えない
 - 深掘りでソースを読むときだけ、必要なディレクトリに絞ってチェックアウトする（`git sparse-checkout set <path>`）
-- 大手のブラウザエンジン（Chromium、WebKit、Gecko）はcloneしない。実装に触れるときは、ソース検索のWebページ（source.chromium.org、searchfox.org など）で該当箇所だけ読む
-- 仕様・議論系の対象（WICG、standards-positions、Chrome Platform Statusなど）はcloneせず、Webページで読んでよい
+- 大手のブラウザエンジン（Chromium、WebKit、Gecko）はcloneしない。実装に触れるときは、GitHubのミラー（`https://github.com/chromium/chromium/blob/main/<path>` など）の該当ファイルだけをWebFetchで読む。source.chromium.org と searchfox.org はegressでブロックされている
+- 仕様・議論系の対象（WICG、standards-positions など、GitHub上にあるもの）はcloneせず、github.comのページをWebFetchで読んでよい
 
 ### ファイル構成とSUMMARY.md
 
@@ -252,9 +264,16 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 - Chrome Platform Status（chromestatus.com）と blink-dev の「Intent to Prototype / Experiment / Ship」
 - web-platform-tests/interop のIssueと決定事項
 
+拾い方:
+- chromestatus.com と blink-dev（groups.google.com）は実行環境から届かない。次の2つで代える
+  - Chromiumで機能の既定の有効・無効が変わったコミット：`https://github.com/chromium/chromium/commits/main/third_party/blink/renderer/platform/runtime_enabled_features.json5` をWebFetchで読む。「Enable 〇〇 by default」「Ship 〇〇」などのコミットが、実際に機能が出荷に向かった印になる。その日のうちにrevertされたものもあるので、revertの有無も見る
+  - Intentのスレッド：WebSearchで「blink-dev "Intent to Ship"」「"Intent to Prototype"」「"Intent to Experiment"」を検索し、対象期間のものを拾う。検索結果からはスレッドの本文を読めないので、題名と日付だけを書き、中身は「不明」とする
+- web-platform-tests/interop のIssueは、github.comのページをWebFetchで読む（`https://github.com/web-platform-tests/interop/issues?q=sort%3Aupdated-desc`）
+
 ルール:
 - どの仕様の、どの段階の実装かを書く。Web仕様のニュースや議論と同じ機能なら、続報として過去の号とつなぐ
 - ブラウザのソースはcloneしない（「cloneの仕方」参照）
+- chromestatus.com と blink-dev を読めなかったことは、節に1行書いておく（「取得できず（chromestatus.com・groups.google.comはegressでブロック。上記はコミット履歴と検索結果から）」）
 
 ### OSSのPR
 
@@ -316,6 +335,14 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 - solidjs/solid のDiscussionsの「Ideas」カテゴリ（SolidにはRFC用のリポジトリもカテゴリもなく、RFCはここに「RFC:」を付けて出る）
 - vercel/next.js のDiscussions（RFCカテゴリ）
 - oxc-project/oxc のDiscussionsと、設計に関わるIssue（RFCやtrackingのラベルがついたもの）
+
+拾い方:
+- どれもgithub.comのページなので、WebFetchで読む。更新順に並べると、前回の実行以降に動いたものが拾える
+  - Issue：`https://github.com/<owner>/<repo>/issues?q=sort%3Aupdated-desc`
+  - Discussionsのカテゴリ：`https://github.com/<owner>/<repo>/discussions/categories/<カテゴリ名>`（例：`vercel/next.js` の `rfc`、`vuejs/rfcs` の `rfc-discussions`）
+  - CSSWGの決定事項：`https://github.com/w3c/csswg-drafts/issues?q=%22The+CSS+Working+Group+just+discussed%22+sort%3Aupdated-desc`
+  - TC39の会議ノート：`https://github.com/tc39/notes/tree/main/meetings`
+- 1件のIssueやDiscussionの中身は、そのページをWebFetchで読む。コメントが長くて途中で切れたら、読めた範囲だけを根拠にし、その旨を書く
 
 ルール:
 - コメントが増えただけで論点が動いていないものは載せない
