@@ -354,10 +354,14 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
   - react, react-dom, next, vite
   - svelte, vue
   - oxcのnpmパッケージ（oxlint, oxc-parser など）
+  - astro（`@astrojs/*` の公式インテグレーションを含む）
+  - nuxt（`@nuxt/*` を含む）
+  - TanStack Startのnpmパッケージ（@tanstack/react-start, @tanstack/solid-start, @tanstack/start-* など）
 
 ルール:
 - 毎回、対象ごとにアドバイザリの一覧を確認する。cloneでは取れないので、WebFetchで読む
-  - リポジトリのアドバイザリ一覧：`https://github.com/<owner>/<repo>/security/advisories`（react, next.js, vite, svelte, vuejs/core, oxc）
+  - リポジトリのアドバイザリ一覧：`https://github.com/<owner>/<repo>/security/advisories`（react, next.js, vite, svelte, vuejs/core, oxc, withastro/astro, nuxt/nuxt, TanStack/router）
+  - TanStack Startは TanStack/router のモノレポにあるので、TanStack/router のアドバイザリのうち Start のパッケージに影響するものを拾う
   - 公開日が前回の実行以降のものを拾う
   - 読めなかったときは、脆弱性の節を省略せず「取得できず（理由）」と書く
 - セキュリティリリース（リリースノートにアドバイザリが並ぶもの）を「今日のリリース」で見つけたら、アドバイザリの確認を飛ばしていても、ここに戻って脆弱性の節を書く
