@@ -5,14 +5,14 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Wed, 30 Sep 2026 22:16:38 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 00:00:15 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title><![CDATA[2026-10-01（木）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-01.html</link>
       <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-01.html</guid>
       <pubDate>Wed, 30 Sep 2026 15:00:00 GMT</pubDate>
-      <description><![CDATA[9/30のTC39会議で Thenable Curtailment（`then` を持つ任意のオブジェクトをPromiseが飲み込む挙動の制限）が Stage 3 に進みました。Vueは `3.6.0-rc.10`（Vapor Modeの修正が中心）と、リアクティビティの `flush` が例外で途中停止しなくなる修正を出しています。]]></description>
+      <description><![CDATA[Next.jsが7件の脆弱性を直すセキュリティリリース（v16.3.8 / v15.5.27）を出しました。最も重いのは画像最適化のSSRF（High、DNSリバインディングで許可ドメインから内部IPへ届く）で、残りは `use cache` やSSG/ISRのキャッシュ汚染・情報漏えいです。TC39では Thenable Curtailment が Stage 3 に進みました。]]></description>
     </item>
     <item>
       <title><![CDATA[2026-09-30（水）]]></title>
