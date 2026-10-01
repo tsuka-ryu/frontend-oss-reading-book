@@ -43,12 +43,14 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 
 - 情報の取り方は、取りたいものによって使い分ける
   - マージされた変更の一覧: 対象を `/tmp/oss/<name>` にcloneし（またはfetchし）、`git log` で拾う。github.comのPR一覧ページを読んでもよい
-  - PR本文、レビュー、関連Issue、Discussions: github.comのページを読む（WebFetchなど）
+  - PR本文、レビュー、関連Issue、Discussions、リリースページ、アドバイザリ: github.comのページをWebFetchで読む
+    - WebFetchは遅延読み込みのツールなので、使う前に `ToolSearch` で読み込む
+    - `curl` でgithub.comのページを取ると、実行環境のプロキシに403で弾かれる。`curl` が403でも、WebFetchを試す前に「取得できず」としない
   - diffとコードの引用: 必ずcloneしたリポジトリの `git show` などから取る。ページの要約から引用しない
   - このリポジトリへのIssue作成: GitHub MCP（または `gh`）
 - 実行環境によっては、他のリポジトリにGitHub APIや `gh` でアクセスできない。使えない手段に頼らない
 - web検索も使ってよい
-- 取得できなかった対象は、推測で埋めずに「取得できず（理由）」と書く
+- 取得できなかった対象は、推測で埋めずに「取得できず（理由）」と書く。書く場所は号の中の該当する節（例：脆弱性の節に「取得できず（403）」）。通知の文面だけに書いて節を省略すると、「該当なし」と区別がつかなくなる
 - 推測で書かない。各項目に元のPR・コミット・Issue・Discussion・アドバイザリのURLを必ず付ける
 - 調べて分からなかったことは「不明」と書く
 - 日本語で書く。専門用語は原語を併記してよい
@@ -63,6 +65,8 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 - 変更の一覧を拾うだけなら、ファイルの中身を落とさないcloneにする
   - 例：`git clone --filter=blob:none --no-checkout --shallow-since=<前回の実行の1日前> <URL> /tmp/oss/<name>`
   - `git log` はこれで動く。`git show` で必要なファイルの中身だけが後から取得される
+- cloneの直後に `git -C /tmp/oss/<name> fetch -q --tags origin` を実行する
+  - cloneで取れるのは、cloneしたブランチの履歴にあるタグだけ。バックポート用のブランチで打たれたリリース（例：Next.jsの `v16.3.8`、`v15.5.27`。既定ブランチは `canary`）は、これをしないと見えない
 - 深掘りでソースを読むときだけ、必要なディレクトリに絞ってチェックアウトする（`git sparse-checkout set <path>`）
 - 大手のブラウザエンジン（Chromium、WebKit、Gecko）はcloneしない。実装に触れるときは、ソース検索のWebページ（source.chromium.org、searchfox.org など）で該当箇所だけ読む
 - 仕様・議論系の対象（WICG、standards-positions、Chrome Platform Statusなど）はcloneせず、Webページで読んでよい
@@ -291,7 +295,9 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 - 「OSSのPR」の対象リポジトリのリリース
 
 拾い方:
-- cloneしたリポジトリのタグを日付で絞る（例：`git for-each-ref refs/tags --sort=-creatordate --format='%(creatordate:iso) %(refname:short)'`）
+- cloneしたリポジトリのタグを、前回の実行以降の日付で絞る（例：`git for-each-ref refs/tags --sort=-creatordate --format='%(creatordate:iso) %(refname:short)'`）
+  - 先に「cloneの仕方」の `fetch --tags` を済ませておく
+  - 先行版（canary、nightly、experimental）を `grep -v` で除いてから日付で絞る。`head -3` のように件数で切らない。先行版が毎日打たれる対象（Next.jsなど）では、正式なリリースが先行版に埋もれて見えなくなる
 - タグで分からないときは、github.comのリリースページ（`https://github.com/<owner>/<repo>/releases`）を読む
 - モノレポで複数のパッケージのタグが出る場合（例：oxcの `oxlint_v…` と `crates_v…`）は、利用者に見えるパッケージのものだけ載せる
 
@@ -323,6 +329,11 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
   - oxcのnpmパッケージ（oxlint, oxc-parser など）
 
 ルール:
+- 毎回、対象ごとにアドバイザリの一覧を確認する。cloneでは取れないので、WebFetchで読む
+  - リポジトリのアドバイザリ一覧：`https://github.com/<owner>/<repo>/security/advisories`（react, next.js, vite, svelte, vuejs/core, oxc）
+  - 公開日が前回の実行以降のものを拾う
+  - 読めなかったときは、脆弱性の節を省略せず「取得できず（理由）」と書く
+- セキュリティリリース（リリースノートにアドバイザリが並ぶもの）を「今日のリリース」で見つけたら、アドバイザリの確認を飛ばしていても、ここに戻って脆弱性の節を書く
 - アドバイザリのページと、修正コミット（cloneしたリポジトリ）を根拠にする
 - 修正コミットが公開されていなければ、diff解説は「不明（修正コミット未公開）」と書く
 
