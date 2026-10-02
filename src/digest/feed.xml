@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Thu, 01 Oct 2026 22:17:43 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2026 22:16:47 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-10-03（土）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-03.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-03.html</guid>
+      <pubDate>Fri, 02 Oct 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[whatwg/htmlが、どのブラウザも出していない `MessagePort` の `close` イベントを仕様から外しました。Ladybirdは、描画のスタイル・レイアウトをメインスレッドから切り離す土台づくりを続けています。対象パッケージの新規の脆弱性アドバイザリはありませんでした。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-10-02（金）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-02.html</link>
