@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Fri, 02 Oct 2026 22:16:47 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 22:15:55 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-10-04（日）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-04.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-04.html</guid>
+      <pubDate>Sat, 03 Oct 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[ECMAScript本体に `Iterator.prototype.join` が入りました（tc39/ecma262、Stage 3 の提案がそのまま仕様の本文へ）。Next.jsはURL更新で不要なSuspenseのフォールバックが出る不具合を直しました。対象パッケージの新規の脆弱性アドバイザリはありませんでした。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-10-03（土）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-03.html</link>
