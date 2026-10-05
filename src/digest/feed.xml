@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Sun, 04 Oct 2026 22:16:13 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 22:17:28 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-10-06（火）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-06.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-06.html</guid>
+      <pubDate>Mon, 05 Oct 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[Next.jsが `forbidden()` と `unauthorized()` を実験機能から外し、設定フラグ `authInterrupts` なしで使えるようにしました。whatwg/htmlでは、COOP・COEPヘッダーの値を Structured Fields の型（token と string）で厳密に読む仕様になりました。対象パッケージの新規の脆弱性アドバイザリはありませんでした。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-10-05（月）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-05.html</link>
