@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Tue, 06 Oct 2026 22:18:04 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 22:18:05 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-10-08（木）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-08.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-08.html</guid>
+      <pubDate>Wed, 07 Oct 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[whatwg/htmlで、DOMから外された `popover` が画面に残り続ける仕様上の穴が塞がりました。あわせてTrusted Typesの仕様がHTML本体に取り込まれ続けています。新規の脆弱性はなく、新しい正式リリースもありませんでした。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-10-07（水）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-07.html</link>
