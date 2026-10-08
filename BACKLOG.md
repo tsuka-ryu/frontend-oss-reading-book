@@ -445,3 +445,4 @@
 - Servoのクロスオリジン`Location`実装統合：独自の別型実装からGeckoに合わせた単一型＋分岐へ寄せる設計判断（パート: servo、出典: https://github.com/servo/servo/pull/48417、2026-09-27 追記）
 - Vueリアクティビティのflush：購読者の例外でバッチを止めず、最初の例外を最後に再送出する設計（パート: signals、出典: https://github.com/vuejs/core/pull/15676、2026-10-01 追記）
 - LadybirdのCookieとHTTPキャッシュのサイト単位の分割（network isolation key、Chrome準拠）：共有状態を鍵設計で分ける題材（パート: ladybird、出典: https://github.com/LadybirdBrowser/ladybird/commit/02253c9f02a98c466c41c4697e8152c267755fa5、2026-10-05 追記）
+- LibJSのC++ランタイムをRustランタイムとファサードで置き換えた移行の手順（パート: ladybird、出典: https://github.com/LadybirdBrowser/ladybird/commit/4014a8a、2026-10-09 追記）
