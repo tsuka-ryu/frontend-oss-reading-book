@@ -283,7 +283,7 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 - vitejs/vite
 - oxc-project/oxc
 - microsoft/TypeScript（Goへの移植版もここで開発されている。microsoft/typescript-go は2026-08-20にクローズ済み）
-- pingdotgg/ts-rust（tsc-rs。TheoによるTypeScript 7（Go版）のRust移植。LLMエージェントが書いたと公言されている実験的なプロジェクト。microsoft/TypeScript の特定リビジョンに固定して追従する。ニュースは【TypeScript】タグ。上流への追従と互換性・速度の変化、LSP対応を中心に拾う。2026-10-08 追加）
+- pingdotgg/ts-rust（tsc-rs。TheoによるTypeScript 7（Go版）のRust移植。LLMエージェントが書いたと公言されている実験的なプロジェクト。microsoft/TypeScript の特定リビジョンに固定して追従する。ニュースは【TypeScript】タグ。コミットが1日100件前後あり、多くはエージェント運用の記録（`docs:` など）なので、それらは件数だけ書く。上流のピン（`UPSTREAM.json` の `current`）の更新、互換性・速度の数字の変化、LSP対応、リリースを中心に拾う。READMEの互換性・速度の数字は自己申告なので、書くときはそう断る。2026-10-08 追加）
 - biomejs/biome
 - solidjs/solid の `main` と `next` ブランチ（`main` は本のシグナルのパートが読んでいる1.x系、`next` は次のメジャー版の開発）
 - react-hook-form/react-hook-form（本のRHFのパートが読んでいるリポジトリ）
