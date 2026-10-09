@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Thu, 08 Oct 2026 22:18:50 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 22:17:22 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-10-10（土）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-10.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-10.html</guid>
+      <pubDate>Fri, 09 Oct 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[whatwg/htmlが、`<style>` を `<body>` の中に置くことを（条件つきで）適合とする変更を入れました。条件は「前にある内容を再スタイルしない」ことです。新規の脆弱性はなく、今日の正式リリースは ts-rust v0.2.0 だけです。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-10-09（金）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-09.html</link>

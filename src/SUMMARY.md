@@ -40,6 +40,7 @@
 
 - [ダイジェストについて](digest/README.md)
 - [Daily 2026-10](digest/daily/2026-10.md)
+  - [10-10（土）](digest/daily/2026-10-10.md)
   - [10-09（金）](digest/daily/2026-10-09.md)
   - [10-08（木）](digest/daily/2026-10-08.md)
   - [10-07（水）](digest/daily/2026-10-07.md)
