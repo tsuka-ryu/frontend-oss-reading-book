@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Sat, 10 Oct 2026 22:14:08 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 11 Oct 2026 22:17:10 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-10-12（月）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-12.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-12.html</guid>
+      <pubDate>Sun, 11 Oct 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[LadybirdがLibJSのJITを既定でオンにしました。昨日の号で「資料の間で食い違う」と書いた点は、設計書どおり「既定でオン」に実コードが揃った形で決着しています。新規の脆弱性はありません。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-10-11（日）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-11.html</link>
