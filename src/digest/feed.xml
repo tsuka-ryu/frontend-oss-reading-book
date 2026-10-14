@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Tue, 13 Oct 2026 22:19:44 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 22:17:25 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-10-15（木）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-15.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-15.html</guid>
+      <pubDate>Wed, 14 Oct 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[Next.jsが、認証なしでリモートコード実行（RCE）に至る重大な脆弱性2件（Image OptimizationのSVG、`use cache` の型付き配列）とServer ActionsのDoSを直すセキュリティリリース v16.4.1 / v15.5.28 を出しました。Reactも同日、RSCの転送プロトコルを改善する4系統のリリースを出しています。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-10-14（水）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-14.html</link>
