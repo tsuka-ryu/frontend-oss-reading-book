@@ -474,3 +474,4 @@
 - LadybirdのCookieとHTTPキャッシュのサイト単位の分割（network isolation key、Chrome準拠）：共有状態を鍵設計で分ける題材（パート: ladybird、出典: https://github.com/LadybirdBrowser/ladybird/commit/02253c9f02a98c466c41c4697e8152c267755fa5、2026-10-05 追記）
 - LibJSのC++ランタイムをRustランタイムとファサードで置き換えた移行の手順（パート: ladybird、出典: https://github.com/LadybirdBrowser/ladybird/commit/4014a8a、2026-10-09 追記）
 - LibJSの最適化JIT：refinement（piノード）で、チェックをデータ依存にして最適化の安全性をIRの形に埋め込む設計（パート: ladybird、出典: https://github.com/LadybirdBrowser/ladybird/commit/268dc96、2026-10-11 追記）
+- LibJSのfuseをwatchpoint setに統合：JITの前提の監視と無効化を一つの仕組みにする設計（パート: ladybird、出典: https://github.com/LadybirdBrowser/ladybird/commit/f9caf37a8cfc6a2f1c0eeea1d71ffac9f678c1b3、2026-10-16 追記）

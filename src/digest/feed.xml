@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Wed, 14 Oct 2026 22:17:25 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 22:18:22 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-10-16（金）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-16.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-16.html</guid>
+      <pubDate>Thu, 15 Oct 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[昨日「中身は不明」と書いたReactのRSC転送プロトコル改善（#37846）が、認証なしRCE（Critical、CVSS v4 9.5）とDoSを直すセキュリティ修正だったとアドバイザリで確定しました。Fizzの `prerender` 中断の修正（#37710）は、完全でないとして取り消されています。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-10-15（木）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-15.html</link>
