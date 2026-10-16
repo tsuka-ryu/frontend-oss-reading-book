@@ -10,7 +10,7 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 - とくに「機能がどう考えられ、どう決まり、どう実装されるか」の流れが見えるように書く
 - スマホで読み物として読む。見出しと短い段落で、流し読みしやすくする
 - 最初は対象を広く取り、件数も絞らない。ただし詳しく書くのは興味深いものだけにし、それ以外は一言にまとめる。読者が号を眺めて、いらない対象をこのファイルから外していく
-- ランタイム（Node.js、Bun）やバンドラ（Rolldown）の内部実装は、読者の興味の外なので対象にしない。ただし、Bunの `bun check`（TypeScript型チェッカー）だけは例外として、「OSSのPR」で追う
+- ランタイム（Node.js、Bun）やバンドラ（Rolldown）の内部実装は、読者の興味の外なので対象にしない。ただし、Bunの `bun check`（TypeScript型チェッカー）と `bun fmt`（Prettier互換のフォーマッター）だけは例外として、「OSSのPR」で追う
 - 読者像と文体は、CLAUDE.mdの「書き方」ではなくこのファイルに従う
 
 ## 共通ルール
@@ -132,7 +132,7 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 
 - 各ニュースは見出しで始める（見出しのレベルは各節の指定に従う。指定がなければ `###`）
 - 見出しはニュースの見出しとして書く。主語と動きが一目で分かる短い文にする（例：「HTMLに `<X>` 要素が入る」「oxcのパーサーが〇〇に対応」）。PRタイトルをそのまま使わない
-- 本文の先頭に分野タグを付ける：`【HTML】` `【DOM】` `【Fetch】` `【Streams】` `【URL】` `【TC39】` `【CSS】` `【ARIA】` `【WCAG】` `【ServiceWorker】` `【WICG】` `【ブラウザ】` `【Interop】` `【React】` `【Next.js】` `【Vite】` `【oxc】` `【TypeScript】` `【Biome】` `【Solid】` `【Svelte】` `【Vue】` `【RHF】` `【Ladybird】` `【Servo】` `【GHC】` `【Wado】` `【脆弱性】`
+- 本文の先頭に分野タグを付ける：`【HTML】` `【DOM】` `【Fetch】` `【Streams】` `【URL】` `【TC39】` `【CSS】` `【ARIA】` `【WCAG】` `【ServiceWorker】` `【WICG】` `【ブラウザ】` `【Interop】` `【React】` `【Next.js】` `【Vite】` `【oxc】` `【TypeScript】` `【Biome】` `【Bun】` `【Solid】` `【Svelte】` `【Vue】` `【RHF】` `【Ladybird】` `【Servo】` `【GHC】` `【Wado】` `【脆弱性】`
 - 各ニュースの最後に `出典:` としてURLを付ける
 
 ### 今日のリリース
@@ -284,7 +284,7 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 - oxc-project/oxc
 - microsoft/TypeScript（Goへの移植版もここで開発されている。microsoft/typescript-go は2026-08-20にクローズ済み）
 - pingdotgg/ts-rust（tsc-rs。TheoによるTypeScript 7（Go版）のRust移植。LLMエージェントが書いたと公言されている実験的なプロジェクト。microsoft/TypeScript の特定リビジョンに固定して追従する。ニュースは【TypeScript】タグ。コミットが1日100件前後あり、多くはエージェント運用の記録（`docs:` など）なので、それらは件数だけ書く。上流のピン（`UPSTREAM.json` の `current`）の更新、互換性・速度の数字の変化、LSP対応、リリースを中心に拾う。READMEの互換性・速度の数字は自己申告なので、書くときはそう断る。2026-10-08 追加）
-- oven-sh/bun（`bun check` に関わるPRとリリースだけ。`bun check` はtypescript-goの型チェッカーの移植で、2026-10-06に #44361 で入った。tscとの差分の修正、速度・互換性の数字の変化、LSPや出力への対応を拾う。それ以外のランタイムのPRは件数も書かない。ts-rustと並べて、Go版チェッカーの移植の流れとして書く。PR本文の速度の数字は自己申告なので、そう断る。2026-10-08 追加）
+- oven-sh/bun（`bun check` と `bun fmt` に関わるPRとリリースだけ。`bun check` はtypescript-goの型チェッカーの移植で、2026-10-06に #44361 で入った。tscとの差分の修正、速度・互換性の数字の変化、LSPや出力への対応を拾う。それ以外のランタイムのPRは件数も書かない。ts-rustと並べて、Go版チェッカーの移植の流れとして書く。PR本文の速度の数字は自己申告なので、そう断る。2026-10-08 追加 `bun fmt` は2026-10-12の #44805 で `bun lint` と一緒に入った、Prettier互換をうたう組み込みフォーマッター（JS/TS/CSS/HTML/Vue/Markdownなど）。Prettierとの出力の差の修正、コメントの扱い、対応言語・プラグインの追加（Svelteなど）、速度の数字の変化を拾う。ニュースは【Bun】タグ。互換性・速度の数字は自己申告なので、そう断る。`bun lint` は `bun fmt` と同じPRで変わるときだけ触れる。2026-10-16 追加）
 - biomejs/biome
 - solidjs/solid の `main` と `next` ブランチ（`main` は本のシグナルのパートが読んでいる1.x系、`next` は次のメジャー版の開発）
 - react-hook-form/react-hook-form（本のRHFのパートが読んでいるリポジトリ）
