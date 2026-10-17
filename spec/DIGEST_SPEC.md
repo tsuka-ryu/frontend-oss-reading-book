@@ -132,7 +132,7 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 
 - 各ニュースは見出しで始める（見出しのレベルは各節の指定に従う。指定がなければ `###`）
 - 見出しはニュースの見出しとして書く。主語と動きが一目で分かる短い文にする（例：「HTMLに `<X>` 要素が入る」「oxcのパーサーが〇〇に対応」）。PRタイトルをそのまま使わない
-- 本文の先頭に分野タグを付ける：`【HTML】` `【DOM】` `【Fetch】` `【Streams】` `【URL】` `【TC39】` `【CSS】` `【ARIA】` `【WCAG】` `【ServiceWorker】` `【WICG】` `【ブラウザ】` `【Interop】` `【React】` `【Next.js】` `【Vite】` `【oxc】` `【TypeScript】` `【Biome】` `【Bun】` `【Solid】` `【Svelte】` `【Vue】` `【RHF】` `【Ladybird】` `【Servo】` `【GHC】` `【Wado】` `【脆弱性】`
+- 本文の先頭に分野タグを付ける：`【HTML】` `【DOM】` `【Fetch】` `【Streams】` `【URL】` `【TC39】` `【CSS】` `【ARIA】` `【WCAG】` `【ServiceWorker】` `【WICG】` `【ブラウザ】` `【Interop】` `【React】` `【Next.js】` `【Vite】` `【oxc】` `【TypeScript】` `【Biome】` `【Bun】` `【Solid】` `【Svelte】` `【Vue】` `【RHF】` `【GHC】` `【Wado】` `【脆弱性】`
 - 各ニュースの最後に `出典:` としてURLを付ける
 
 ### 今日のリリース
@@ -292,8 +292,6 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 - react-hook-form/react-hook-form（本のRHFのパートが読んでいるリポジトリ）
 - sveltejs/svelte（runesのコンパイラとランタイム）
 - vuejs/core の `minor` ブランチ（Vapor Modeの `compiler-vapor` と `runtime-vapor` はこのブランチで開発されている。2026-09-26時点で `main` にはない）
-- LadybirdBrowser/ladybird（ブランチは `master`。独自に作られているブラウザエンジンで、仕様がどう実装されるかを追える。本のLadybirdのパートが読んでいるリポジトリ）
-- servo/servo と servo/stylo（本のServoのパートが読んでいるリポジトリ。StyloはServoとFirefoxが共有するスタイル計算の実装で、別リポジトリで開発されている）
 - ghc/ghc（本のパートにはせず、変更だけを追う。ブランチは `master`。gitlab.haskell.orgのGitHubミラー。マージリクエストの議論はGitLabにあり、読めないことがあるので、そのときはコミットメッセージを根拠にする）
 - wado-lang/wado（Wasm Component Modelだけを出力先にする言語。コミットが1日100件を超えるので、`docs/wep-*.md` の追加・変更と、言語やコンパイラの設計に関わるPRを中心に拾い、それ以外は件数だけ書く）
 
