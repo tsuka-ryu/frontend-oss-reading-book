@@ -284,6 +284,8 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 - oxc-project/oxc
 - microsoft/TypeScript（Goへの移植版もここで開発されている。microsoft/typescript-go は2026-08-20にクローズ済み）
 - pingdotgg/ts-rust（tsc-rs。TheoによるTypeScript 7（Go版）のRust移植。LLMエージェントが書いたと公言されている実験的なプロジェクト。microsoft/TypeScript の特定リビジョンに固定して追従する。ニュースは【TypeScript】タグ。コミットが1日100件前後あり、多くはエージェント運用の記録（`docs:` など）なので、それらは件数だけ書く。上流のピン（`UPSTREAM.json` の `current`）の更新、互換性・速度の数字の変化、LSP対応、リリースを中心に拾う。READMEの互換性・速度の数字は自己申告なので、書くときはそう断る。2026-10-08 追加）
+- vercel-labs/tsc-ts（TypeScript 7.0.2（Go版）をTypeScriptで移植した実験的プロジェクト。scriptcでネイティブにコンパイルして配布される。tsgoの出力と比べて検証している。ブランチは `main`。ニュースは【TypeScript】タグ。ts-rustと並べて、Go版チェッカーの移植の流れとして書く。tsgoとの一致率・速度の数字はREADMEの自己申告なので、そう断る。2026-10-17 追加）
+- vercel-labs/scriptc（TypeScript/JavaScriptをネイティブ実行ファイルとWebAssemblyにコンパイルする実験的なコンパイラ。TypeScriptの型チェック結果を使ってコードを生成する。tsc-tsのビルドに使われている。ブランチは `main`。ニュースは【TypeScript】タグ。対応する構文・Node.js APIの範囲の変化、`scriptc coverage`、リリースを中心に拾う。件数の多い細かい修正は件数だけ書く。数字は自己申告なので、そう断る。2026-10-17 追加）
 - oven-sh/bun（`bun check` と `bun fmt` に関わるPRとリリースだけ。`bun check` はtypescript-goの型チェッカーの移植で、2026-10-06に #44361 で入った。tscとの差分の修正、速度・互換性の数字の変化、LSPや出力への対応を拾う。それ以外のランタイムのPRは件数も書かない。ts-rustと並べて、Go版チェッカーの移植の流れとして書く。PR本文の速度の数字は自己申告なので、そう断る。2026-10-08 追加 `bun fmt` は2026-10-12の #44805 で `bun lint` と一緒に入った、Prettier互換をうたう組み込みフォーマッター（JS/TS/CSS/HTML/Vue/Markdownなど）。Prettierとの出力の差の修正、コメントの扱い、対応言語・プラグインの追加（Svelteなど）、速度の数字の変化を拾う。ニュースは【Bun】タグ。互換性・速度の数字は自己申告なので、そう断る。`bun lint` は `bun fmt` と同じPRで変わるときだけ触れる。2026-10-16 追加）
 - biomejs/biome
 - solidjs/solid の `main` と `next` ブランチ（`main` は本のシグナルのパートが読んでいる1.x系、`next` は次のメジャー版の開発）
