@@ -131,7 +131,7 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 
 - 各ニュースは見出しで始める（見出しのレベルは各節の指定に従う。指定がなければ `###`）
 - 見出しはニュースの見出しとして書く。主語と動きが一目で分かる短い文にする（例：「HTMLに `<X>` 要素が入る」「oxcのパーサーが〇〇に対応」）。PRタイトルをそのまま使わない
-- 本文の先頭に分野タグを付ける：`【HTML】` `【DOM】` `【Fetch】` `【Streams】` `【URL】` `【TC39】` `【CSS】` `【ARIA】` `【WCAG】` `【ServiceWorker】` `【WICG】` `【React】` `【Next.js】` `【Vite】` `【oxc】` `【TypeScript】` `【Biome】` `【Bun】` `【Solid】` `【Svelte】` `【Vue】` `【GHC】` `【Wado】` `【脆弱性】`
+- 本文の先頭に分野タグを付ける：`【HTML】` `【DOM】` `【Fetch】` `【Streams】` `【URL】` `【TC39】` `【CSS】` `【ARIA】` `【WCAG】` `【ServiceWorker】` `【WICG】` `【Interop】` `【React】` `【Next.js】` `【Vite】` `【oxc】` `【TypeScript】` `【Biome】` `【Bun】` `【Solid】` `【Svelte】` `【Vue】` `【GHC】` `【Wado】` `【脆弱性】`
 - 各ニュースの最後に `出典:` としてURLを付ける
 
 ### 今日のリリース
@@ -308,6 +308,7 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 対象:
 - WICG（WICG/proposals と、議論が動いたWICGの提案リポジトリ）：新しいWeb APIの発案
 - mozilla/standards-positions, WebKit/standards-positions：新しい仕様へのブラウザ各社の立場と理由
+- web-platform-tests/interop のIssueと決定事項（ブラウザ各社が揃えて実装する機能の選定。個別のブラウザの実装状況ではなく、何が選ばれ、なぜ選ばれたかを追う。ニュースは【Interop】タグ）
 - TC39の会議のアジェンダと結果（会議やノートの公開があったときのみ）
 - tc39/proposal-signals のIssueとPR
 - tc39/proposals でStageが変わった提案、またはStage 1〜3の提案リポジトリのIssueで議論が進んだもの
