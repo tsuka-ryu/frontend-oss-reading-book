@@ -57,7 +57,7 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 | github.com のページ（PR本文・レビュー、Issue、Discussions、リリース、アドバイザリ、ファイルとコミット履歴） | WebFetchで届く。`curl` とGitHub APIは403 | WebFetch |
 | raw.githubusercontent.com | `curl` でもWebFetchでも届く | ファイル1つを丸ごと読むとき |
 | 仕様の本文（html.spec.whatwg.org、tc39.es、www.w3.org、drafts.csswg.org） | 届かない（egressでブロック） | cloneした仕様リポジトリのソース（whatwg/htmlの `source`、tc39/ecma262の `spec.html`、csswg-draftsの `.bs`）を読む |
-| chromestatus.com、groups.google.com（blink-dev）、developer.chrome.com、webstatus.dev、www.mail-archive.com | 届かない | 下の「ブラウザの実装」の代わりの手段 |
+| chromestatus.com、groups.google.com（blink-dev）、developer.chrome.com、webstatus.dev、www.mail-archive.com | 届かない | 追わない |
 | source.chromium.org、chromium.googlesource.com、searchfox.org、bugs.webkit.org、bugzilla.mozilla.org、issues.chromium.org | 届かない | GitHubのミラー（`chromium/chromium`、`WebKit/WebKit`、`mozilla-firefox/firefox`）のファイルやコミット履歴をWebFetchで読む |
 | gitlab.haskell.org（GHCのマージリクエスト） | 届かない | ghc/ghc のGitHubミラーをcloneし、コミットメッセージを根拠にする |
 
@@ -116,7 +116,6 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 ## トップニュース
 ## 今日の深掘り
 ## 仕様の変更
-## ブラウザの実装
 ## OSSのPR
 ## 議論ウォッチ
 ## 続報
@@ -132,7 +131,7 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 
 - 各ニュースは見出しで始める（見出しのレベルは各節の指定に従う。指定がなければ `###`）
 - 見出しはニュースの見出しとして書く。主語と動きが一目で分かる短い文にする（例：「HTMLに `<X>` 要素が入る」「oxcのパーサーが〇〇に対応」）。PRタイトルをそのまま使わない
-- 本文の先頭に分野タグを付ける：`【HTML】` `【DOM】` `【Fetch】` `【Streams】` `【URL】` `【TC39】` `【CSS】` `【ARIA】` `【WCAG】` `【ServiceWorker】` `【WICG】` `【ブラウザ】` `【Interop】` `【React】` `【Next.js】` `【Vite】` `【oxc】` `【TypeScript】` `【Biome】` `【Bun】` `【Solid】` `【Svelte】` `【Vue】` `【GHC】` `【Wado】` `【脆弱性】`
+- 本文の先頭に分野タグを付ける：`【HTML】` `【DOM】` `【Fetch】` `【Streams】` `【URL】` `【TC39】` `【CSS】` `【ARIA】` `【WCAG】` `【ServiceWorker】` `【WICG】` `【React】` `【Next.js】` `【Vite】` `【oxc】` `【TypeScript】` `【Biome】` `【Bun】` `【Solid】` `【Svelte】` `【Vue】` `【GHC】` `【Wado】` `【脆弱性】`
 - 各ニュースの最後に `出典:` としてURLを付ける
 
 ### 今日のリリース
@@ -168,7 +167,7 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 
 対象リポジトリは `/tmp/oss/<name>` にクローンして読む。
 
-### 仕様の変更 / ブラウザの実装 / OSSのPR
+### 仕様の変更 / OSSのPR
 
 拾ったニュースを、除外の判定に当たるもの以外はすべて載せる。ただし全件を詳しく書くと読み切れないので、「注目」と「その他」に分けて書き分ける。トップニュースや深掘りで扱ったものは、見出しと参照リンクだけ。
 
@@ -257,23 +256,6 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 
 ルール:
 - editorial（誤字、リンク修正、整形）は除外
-
-### ブラウザの実装
-
-対象:
-- Chrome Platform Status（chromestatus.com）と blink-dev の「Intent to Prototype / Experiment / Ship」
-- web-platform-tests/interop のIssueと決定事項
-
-拾い方:
-- chromestatus.com と blink-dev（groups.google.com）は実行環境から届かない。次の2つで代える
-  - Chromiumで機能の既定の有効・無効が変わったコミット：`https://github.com/chromium/chromium/commits/main/third_party/blink/renderer/platform/runtime_enabled_features.json5` をWebFetchで読む。「Enable 〇〇 by default」「Ship 〇〇」などのコミットが、実際に機能が出荷に向かった印になる。その日のうちにrevertされたものもあるので、revertの有無も見る
-  - Intentのスレッド：WebSearchで「blink-dev "Intent to Ship"」「"Intent to Prototype"」「"Intent to Experiment"」を検索し、対象期間のものを拾う。検索結果からはスレッドの本文を読めないので、題名と日付だけを書き、中身は「不明」とする
-- web-platform-tests/interop のIssueは、github.comのページをWebFetchで読む（`https://github.com/web-platform-tests/interop/issues?q=sort%3Aupdated-desc`）
-
-ルール:
-- どの仕様の、どの段階の実装かを書く。Web仕様のニュースや議論と同じ機能なら、続報として過去の号とつなぐ
-- ブラウザのソースはcloneしない（「cloneの仕方」参照）
-- chromestatus.com と blink-dev を読めなかったことは、節に1行書いておく（「取得できず（chromestatus.com・groups.google.comはegressでブロック。上記はコミット履歴と検索結果から）」）
 
 ### OSSのPR
 
