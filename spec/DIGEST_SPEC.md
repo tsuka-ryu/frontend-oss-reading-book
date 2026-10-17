@@ -132,7 +132,7 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 
 - 各ニュースは見出しで始める（見出しのレベルは各節の指定に従う。指定がなければ `###`）
 - 見出しはニュースの見出しとして書く。主語と動きが一目で分かる短い文にする（例：「HTMLに `<X>` 要素が入る」「oxcのパーサーが〇〇に対応」）。PRタイトルをそのまま使わない
-- 本文の先頭に分野タグを付ける：`【HTML】` `【DOM】` `【Fetch】` `【Streams】` `【URL】` `【TC39】` `【CSS】` `【ARIA】` `【WCAG】` `【ServiceWorker】` `【WICG】` `【ブラウザ】` `【Interop】` `【React】` `【Next.js】` `【Vite】` `【oxc】` `【TypeScript】` `【Biome】` `【Bun】` `【Solid】` `【Svelte】` `【Vue】` `【RHF】` `【GHC】` `【Wado】` `【脆弱性】`
+- 本文の先頭に分野タグを付ける：`【HTML】` `【DOM】` `【Fetch】` `【Streams】` `【URL】` `【TC39】` `【CSS】` `【ARIA】` `【WCAG】` `【ServiceWorker】` `【WICG】` `【ブラウザ】` `【Interop】` `【React】` `【Next.js】` `【Vite】` `【oxc】` `【TypeScript】` `【Biome】` `【Bun】` `【Solid】` `【Svelte】` `【Vue】` `【GHC】` `【Wado】` `【脆弱性】`
 - 各ニュースの最後に `出典:` としてURLを付ける
 
 ### 今日のリリース
@@ -289,7 +289,6 @@ Web仕様とフロントエンドOSSの動きを、毎朝届くニュースと�
 - oven-sh/bun（`bun check` と `bun fmt` に関わるPRとリリースだけ。`bun check` はtypescript-goの型チェッカーの移植で、2026-10-06に #44361 で入った。tscとの差分の修正、速度・互換性の数字の変化、LSPや出力への対応を拾う。それ以外のランタイムのPRは件数も書かない。ts-rustと並べて、Go版チェッカーの移植の流れとして書く。PR本文の速度の数字は自己申告なので、そう断る。2026-10-08 追加 `bun fmt` は2026-10-12の #44805 で `bun lint` と一緒に入った、Prettier互換をうたう組み込みフォーマッター（JS/TS/CSS/HTML/Vue/Markdownなど）。Prettierとの出力の差の修正、コメントの扱い、対応言語・プラグインの追加（Svelteなど）、速度の数字の変化を拾う。ニュースは【Bun】タグ。互換性・速度の数字は自己申告なので、そう断る。`bun lint` は `bun fmt` と同じPRで変わるときだけ触れる。2026-10-16 追加）
 - biomejs/biome
 - solidjs/solid の `main` と `next` ブランチ（`main` は本のシグナルのパートが読んでいる1.x系、`next` は次のメジャー版の開発）
-- react-hook-form/react-hook-form（本のRHFのパートが読んでいるリポジトリ）
 - sveltejs/svelte（runesのコンパイラとランタイム）
 - vuejs/core の `minor` ブランチ（Vapor Modeの `compiler-vapor` と `runtime-vapor` はこのブランチで開発されている。2026-09-26時点で `main` にはない）
 - ghc/ghc（本のパートにはせず、変更だけを追う。ブランチは `master`。gitlab.haskell.orgのGitHubミラー。マージリクエストの議論はGitLabにあり、読めないことがあるので、そのときはコミットメッセージを根拠にする）
