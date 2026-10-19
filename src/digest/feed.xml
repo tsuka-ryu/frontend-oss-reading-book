@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Sun, 18 Oct 2026 22:06:06 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 22:10:48 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-10-20（火）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-20.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-20.html</guid>
+      <pubDate>Mon, 19 Oct 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[Next.jsが `<Link prefetch="navigation">` を入れ、`await navigation()` の境界を越えて先読みできるようになった。HTML仕様では、popupと `data:` 文書の「secure context」判定が実装に合わせて直った。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-10-19（月）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-19.html</link>
