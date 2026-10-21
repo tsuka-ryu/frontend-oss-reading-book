@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Tue, 20 Oct 2026 22:10:01 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 22:10:55 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-10-22（木）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-22.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-22.html</guid>
+      <pubDate>Wed, 21 Oct 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[Vite 6.4.5 が、`server.fs.deny` を `?raw` などのクエリですり抜けられる問題（Moderate）を直した。原因は、v6.4.4 でセキュリティ修正を「半分だけ」バックポートしたことだった。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-10-21（水）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-21.html</link>
