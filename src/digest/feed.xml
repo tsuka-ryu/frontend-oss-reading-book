@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Fri, 23 Oct 2026 22:09:42 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2026 22:17:40 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-10-25（日）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-25.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-25.html</guid>
+      <pubDate>Sat, 24 Oct 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[Turbopackが、チャンクグループの「すでに読み込み済みのモジュール」を集合ではなく、チャンクグループ番号のビットマップで覚えるようになった（動的importの多い合成ベンチで、ビルド時間が約30%減とPRで報告されている）。新規の脆弱性はありません。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-10-24（土）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-24.html</link>
