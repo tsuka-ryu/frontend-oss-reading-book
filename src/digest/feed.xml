@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Sun, 25 Oct 2026 22:17:26 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 22:20:35 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-10-27（火）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-27.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-27.html</guid>
+      <pubDate>Mon, 26 Oct 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[Solid 2.0（`next`）に `onFlush` が入った。「自分の書き込みを、他の更新の保留（hold）に巻き込ませない」ための小さな出口。新規の脆弱性はなし。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-10-26（月）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-26.html</link>
