@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Thu, 29 Oct 2026 00:36:12 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 22:18:03 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-10-30（金）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-30.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-30.html</guid>
+      <pubDate>Thu, 29 Oct 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[Next.js が、204 を返すルートハンドラーで `next build` が止まる不具合を直した。原因は「本文なしのレスポンスを、空のバッファから作り直そうとした」こと。新規の脆弱性はなし。前回の号（10-29 09:36 JST）以降の分をまとめている。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-10-29（木）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-29.html</link>
