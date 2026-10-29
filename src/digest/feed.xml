@@ -5,7 +5,7 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Wed, 28 Oct 2026 22:20:03 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 00:36:12 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title><![CDATA[2026-10-29（木）]]></title>
@@ -13,6 +13,13 @@
       <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-29.html</guid>
       <pubDate>Wed, 28 Oct 2026 15:00:00 GMT</pubDate>
       <description><![CDATA[Nuxt 4.6.3 が開発サーバーのファイル読み出しなど5件のセキュリティ修正を公開し、Astroの公式インテグレーションにもXSSが3件出た。前回の号（10-26）から3日分をまとめている。]]></description>
+    </item>
+    <item>
+      <title><![CDATA[2026-10-28（水）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-28.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-28.html</guid>
+      <pubDate>Tue, 27 Oct 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[GHCのコンパイラが、モジュールの依存解析（downsweep）を「ルールを並列に解く」形に書き換えた。新規の脆弱性はなし。]]></description>
     </item>
     <item>
       <title><![CDATA[2026-10-26（月）]]></title>
