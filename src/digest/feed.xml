@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Thu, 29 Oct 2026 22:18:03 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 22:21:29 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-10-31（土）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-31.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-31.html</guid>
+      <pubDate>Fri, 30 Oct 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[ECMAScript 本体に `Iterator.prototype.includes` が入った（ecma262 #3969）。配列の `includes` と同じ見た目で、「イテレーターを途中まで読んで、見つかったら閉じる」という挙動が仕様の手順として固まった。新規の脆弱性はなし。前回の号（10-30 07:18 JST）以降の分をまとめている。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-10-30（金）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-10-30.html</link>
