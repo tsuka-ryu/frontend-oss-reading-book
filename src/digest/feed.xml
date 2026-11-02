@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Sun, 01 Nov 2026 22:21:08 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 22:19:17 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-11-03（火）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-03.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-03.html</guid>
+      <pubDate>Mon, 02 Nov 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[Nuxt 4.6.4 がセキュリティリリースとして出て、Nuxt本体の8件のアドバイザリが公開された。うち2件は「ルーター（URLを読む側）とルートルール（URLを照合する側）で、同じパスを違う文字列として読む」ことによる認可バイパスで、過去の修正の不完全さを突いたもの。前回の号（11-02 07:21 JST）以降の分をまとめている。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-11-02（月）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-02.html</link>
