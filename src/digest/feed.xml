@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Tue, 03 Nov 2026 22:21:21 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 22:18:21 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-11-05（木）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-05.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-05.html</guid>
+      <pubDate>Wed, 04 Nov 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[DOM Standard が、まだ存在しない `OpaqueRange` のために、Range の継承の途中に `NodeRange` を挟んで「Range は必ずノードを指す」という前提を型の上で外し始めた。新規の脆弱性はなし。前回の号（11-04 07:22 JST）以降の分をまとめている。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-11-04（水）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-04.html</link>
