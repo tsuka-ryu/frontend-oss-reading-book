@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Sun, 08 Nov 2026 22:16:54 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 22:18:55 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-11-10（火）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-10.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-10.html</guid>
+      <pubDate>Mon, 09 Nov 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[oxc の React Compiler 移植が `??=` `||=` `&&=` に対応した。upstream で閉じられたままの機能を先に入れた形。oxlint v1.93.0 / oxfmt v0.78.0、Next.js 16.4.6、Vite 8.3.7 が公開された。新規の脆弱性は、アドバイザリ一覧を確認できた Vite と Next.js ではなかった（他は未確認）。前回の号（11-09 07:17 JST）以降の分をまとめている。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-11-09（月）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-09.html</link>
