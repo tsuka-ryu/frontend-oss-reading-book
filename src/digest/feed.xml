@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Mon, 09 Nov 2026 22:18:55 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 22:24:38 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-11-11（水）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-11.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-11.html</guid>
+      <pubDate>Tue, 10 Nov 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[Vite に Critical のRCE（`__vite-browser-external` 仮想モジュール）のアドバイザリが公開された。パッチ版は前日に出ており、`--host` でdev serverを公開している人は 8.3.7 / 8.2.5 / 8.1.7 / 7.3.8 / 6.4.6 以降へ。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-11-10（火）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-10.html</link>
