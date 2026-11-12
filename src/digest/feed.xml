@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Wed, 11 Nov 2026 22:19:12 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 22:17:55 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-11-13（金）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-13.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-13.html</guid>
+      <pubDate>Thu, 12 Nov 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[Vite の main に、dev サーバーの `server.fs.strict: 'extended'` と、プラグインが「安全なモジュール」を登録する `environment.addSafeModule` が入った。GHC 10.0.1-alpha2 と 9.14.2-rc3 が公開。新規の脆弱性は確認できず。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-11-12（木）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-12.html</link>
