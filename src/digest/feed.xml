@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Thu, 12 Nov 2026 22:17:55 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 22:20:37 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-11-14（土）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-14.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-14.html</guid>
+      <pubDate>Fri, 13 Nov 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[Next.js の main で Turbopack の GC（`experimental.turbopackGc`）が、canary だけでなく全ビルドで既定オンになりました（16.5 で出荷予定）。新規の脆弱性は確認できませんでした。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-11-13（金）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-13.html</link>
