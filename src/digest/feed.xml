@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Sat, 14 Nov 2026 22:17:37 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 15 Nov 2026 22:17:27 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-11-16（月）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-16.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-16.html</guid>
+      <pubDate>Sun, 15 Nov 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[oxlint が「安全な自動修正（`--fix`）」を見直し、実行時の観測可能な出力が変わる書き換えを提案（suggestion）へ降格する修正を一斉に入れました。Solid 2.0 は rc.22、Biome は 2.6.8 が公開されました。新規の脆弱性は確認できませんでした（確認範囲は脆弱性の節）。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-11-15（日）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-15.html</link>
