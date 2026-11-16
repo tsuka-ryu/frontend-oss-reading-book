@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Sun, 15 Nov 2026 22:17:27 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 22:20:34 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-11-17（火）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-17.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-17.html</guid>
+      <pubDate>Mon, 16 Nov 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[HTML Standard に `<input type="checkbox" switch>` が入り、2018年の Issue #4180 から約8年でスイッチ部品が仕様になりました。oxlint 1.94.0 が出て、Solid 2.0 は rc.23 に進み、安定版（2.0.0）へ向けて「RCの文言を外す」準備が main に入りました。新規の脆弱性は確認できませんでした（確認範囲は脆弱性の節）。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-11-16（月）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-16.html</link>
