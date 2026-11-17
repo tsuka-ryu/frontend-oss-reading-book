@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Mon, 16 Nov 2026 22:20:34 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2026 22:19:04 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-11-18（水）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-18.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-18.html</guid>
+      <pubDate>Tue, 17 Nov 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[Solid 2.0.0 が安定版になりました（RC 23本、14週間）。HTML 仕様には、同一オリジンのナビゲーションで sticky activation を引き継ぐ変更が入りました。新規の脆弱性は確認できず。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-11-17（火）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-17.html</link>
