@@ -476,3 +476,4 @@
 - LibJSの最適化JIT：refinement（piノード）で、チェックをデータ依存にして最適化の安全性をIRの形に埋め込む設計（パート: ladybird、出典: https://github.com/LadybirdBrowser/ladybird/commit/268dc96、2026-10-11 追記）
 - LibJSのfuseをwatchpoint setに統合：JITの前提の監視と無効化を一つの仕組みにする設計（パート: ladybird、出典: https://github.com/LadybirdBrowser/ladybird/commit/f9caf37a8cfc6a2f1c0eeea1d71ffac9f678c1b3、2026-10-16 追記）
 - Turbopackのavailability管理：モジュール集合からチャンクグループ番号のビットマップ（roaring）への置き換えと、グラフ局所の番号を境界で正体（ChunkGroupKey）に戻す設計（パート: nextjs、出典: https://github.com/vercel/next.js/pull/98685、2026-10-25 追記）
+- Svelteのカスタムレンダラー（`push_renderer`とexport条件でDOM操作を差し替える設計）（パート: 新規、出典: https://github.com/sveltejs/svelte/pull/18042、2026-11-21 追記）
