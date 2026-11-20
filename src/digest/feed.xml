@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Thu, 19 Nov 2026 22:18:12 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 22:19:41 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-11-21（土）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-21.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-21.html</guid>
+      <pubDate>Fri, 20 Nov 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[Svelte 5.59.0 に、DOM の代わりに自前の「描画先」へ出力できるカスタムレンダラー API（実験的）が入りました。issue を立てた 2025-03 から約 8 か月半での着地です。対象パッケージの新規の脆弱性は確認できず。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-11-20（金）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-20.html</link>
