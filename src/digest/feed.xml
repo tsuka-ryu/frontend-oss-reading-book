@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Fri, 20 Nov 2026 22:19:41 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 22:17:37 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-11-22（日）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-22.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-22.html</guid>
+      <pubDate>Sat, 21 Nov 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[React の Flight に、サーバーで書いた値をクライアントで集計して読む仕組み「Ledgers」の書き込み側（#37590）が入りました。読み取り側は次の PR 待ちです。対象パッケージの新規の脆弱性は確認できず。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-11-21（土）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-21.html</link>
