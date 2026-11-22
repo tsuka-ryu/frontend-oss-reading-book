@@ -5,8 +5,15 @@
     <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/index.html</link>
     <description><![CDATA[Web仕様とフロントエンドOSSの動きを、毎朝届くニュースとしてまとめるダイジェスト。]]></description>
     <language>ja</language>
-    <lastBuildDate>Sat, 21 Nov 2026 22:17:37 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 22 Nov 2026 22:19:47 GMT</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title><![CDATA[2026-11-23（月）]]></title>
+      <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-23.html</link>
+      <guid isPermaLink="true">https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-23.html</guid>
+      <pubDate>Sun, 22 Nov 2026 15:00:00 GMT</pubDate>
+      <description><![CDATA[Next.js の画像最適化に、sharp の代わりにサンドボックス化した Rust ワーカーを使う実験的オプションが入りました。今日は週末明けで全体に静かな日で、新規の脆弱性は確認できた範囲ではありません。]]></description>
+    </item>
     <item>
       <title><![CDATA[2026-11-22（日）]]></title>
       <link>https://tsuka-ryu.github.io/frontend-oss-reading-book/digest/daily/2026-11-22.html</link>
