@@ -40,6 +40,7 @@
 
 - [ダイジェストについて](digest/README.md)
 - [Daily 2026-11](digest/daily/2026-11.md)
+  - [11-26（木）](digest/daily/2026-11-26.md)
   - [11-25（水）](digest/daily/2026-11-25.md)
   - [11-24（火）](digest/daily/2026-11-24.md)
   - [11-23（月）](digest/daily/2026-11-23.md)
